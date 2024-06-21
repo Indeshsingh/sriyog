@@ -56,13 +56,13 @@ class HomeScreen extends StatelessWidget {
                 Column(
                   children: [
                     Image.asset(
-                      'assets/logo.png',
+                      'assets/outlet.png',
                       width: 82,
                       height: 82,
                     ),
                     const SizedBox(height: 5),
                     const Text(
-                      'Electrician 1',
+                      'Electrician',
                       style: TextStyle(fontSize: 12),
                     ),
                   ],
@@ -71,13 +71,13 @@ class HomeScreen extends StatelessWidget {
                 Column(
                   children: [
                     Image.asset(
-                      'assets/logo.png',
+                      'assets/contractor.png',
                       width: 82,
                       height: 82,
                     ),
                     const SizedBox(height: 5),
                     const Text(
-                      'Electrician 2',
+                      'Contractor',
                       style: TextStyle(fontSize: 12),
                     ),
                   ],
@@ -86,13 +86,13 @@ class HomeScreen extends StatelessWidget {
                 Column(
                   children: [
                     Image.asset(
-                      'assets/logo.png',
+                      'assets/priest.png',
                       width: 82,
                       height: 82,
                     ),
                     const SizedBox(height: 5),
                     const Text(
-                      'Electrician 3',
+                      'Priest',
                       style: TextStyle(fontSize: 12),
                     ),
                   ],
@@ -101,13 +101,13 @@ class HomeScreen extends StatelessWidget {
                 Column(
                   children: [
                     Image.asset(
-                      'assets/logo.png',
+                      'assets/plumber.png',
                       width: 82,
                       height: 82,
                     ),
                     const SizedBox(height: 5),
                     const Text(
-                      'Electrician 4',
+                      'Plumber',
                       style: TextStyle(fontSize: 12),
                     ),
                   ],
