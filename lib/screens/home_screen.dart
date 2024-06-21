@@ -9,11 +9,10 @@ class HomeScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Center(
+          Padding(
+            padding: const EdgeInsets.only(left: 17.0, right: 17.0),
             child: Image.asset(
               'assets/pic2.jpg',
-              width: 330,
-              height: 330,
             ),
           ),
           const SizedBox(
@@ -128,8 +127,35 @@ class HomeScreen extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              _buildProfessional('assets/img.png', 'name1'),
+              _buildProfessional('assets/img.png', 'name2'),
+              _buildProfessional('assets/img.png', 'name3'),
+              _buildProfessional('assets/img.png', 'name4'),
+            ],
+          ),
         ],
       ),
     );
   }
+}
+
+Widget _buildProfessional(String imagePath, String label) {
+  return Column(
+    children: [
+      CircleAvatar(
+        backgroundImage: AssetImage(imagePath),
+        radius: 41,
+      ),
+      const SizedBox(height: 5),
+      Text(
+        label,
+
+        // ignore: prefer_const_constructors
+        style: TextStyle(fontSize: 12),
+      ),
+    ],
+  );
 }

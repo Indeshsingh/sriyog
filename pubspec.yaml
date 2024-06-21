@@ -91,3 +91,7 @@ flutter:
   assets:
   - assets/pic2.jpg
   - assets/logo.png
+  - assets/outlet.png
+  - assets/contractor.png
+  - assets/plumber.png
+  - assets/priest.png
