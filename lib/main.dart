@@ -155,8 +155,11 @@ void main() {
               height: 10,
             ),
              const Column(
+              // hello
           children: [
-        CircleAvatar(
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: CircleAvatar(
                 backgroundImage: AssetImage('assets/logo.png'),
               ),
             ),
