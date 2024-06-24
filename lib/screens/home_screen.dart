@@ -11,8 +11,17 @@ class HomeScreen extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 17.0, right: 17.0),
-            child: Image.asset(
-              'assets/pic2.jpg',
+            child: Container(
+              width: double.infinity,
+              height: 200,
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.white, width: 3),
+                borderRadius: BorderRadius.circular(15),
+                image: const DecorationImage(
+                  image: AssetImage('assets/pic2.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
           const SizedBox(
@@ -130,10 +139,10 @@ class HomeScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _buildProfessional('assets/img.png', 'name1'),
-              _buildProfessional('assets/img.png', 'name2'),
-              _buildProfessional('assets/img.png', 'name3'),
-              _buildProfessional('assets/img.png', 'name4'),
+              _buildProfessional('assets/logo.png', 'Indesh'),
+              _buildProfessional('assets/logo.png', 'name2'),
+              _buildProfessional('assets/logo.png', 'name3'),
+              _buildProfessional('assets/logo.png', 'name4'),
             ],
           ),
         ],
