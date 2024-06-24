@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:profile_app/screens/home_screen.dart';
-import 'package:profile_app/screens/top_proffessionals.dart';
 
 void main() {
   runApp(MaterialApp(
