@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:profile_app/screens/home_screen.dart';
 
@@ -7,6 +9,7 @@ void main() {
     title: 'MyApp',
     home: Scaffold(
         appBar: AppBar(
+          backgroundColor: Color.fromARGB(255, 220, 216, 216),
           titleSpacing: 0.0,
           title: const Row(
             children: [

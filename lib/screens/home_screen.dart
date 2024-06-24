@@ -162,13 +162,14 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Color.fromARGB(255, 104, 88, 88),
+          backgroundColor: Color.fromARGB(255, 206, 194, 194),
           unselectedItemColor: Colors.black,
           selectedItemColor: Colors.red,
+          type: BottomNavigationBarType.fixed,
           onTap: (value) {},
           items: [
             const BottomNavigationBarItem(
-                icon: Icon(Icons.home), label: 'home'),
+                icon: Icon(Icons.home), label: 'Home'),
             const BottomNavigationBarItem(
                 icon: Icon(Icons.room_service), label: 'Services'),
             const BottomNavigationBarItem(
