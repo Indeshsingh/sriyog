@@ -1,8 +1,15 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -131,14 +138,14 @@ class HomeScreen extends StatelessWidget {
                   height: 10,
                 ),
                 const Padding(
-                  padding: EdgeInsets.only(left: 16.0),
+                  padding: EdgeInsets.only(left: 14.0),
                   child: Text(
                     '// Top Professionals',
-                    style: TextStyle(fontSize: 15, fontStyle: FontStyle.italic),
+                    style: TextStyle(fontSize: 18, fontStyle: FontStyle.italic),
                   ),
                 ),
                 const SizedBox(
-                  height: 10,
+                  height: 18,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -152,48 +159,25 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(Icons.home_repair_service),
-                  label: const Text('Home'),
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 12.0),
-                    textStyle: const TextStyle(fontSize: 10),
-                  ),
-                ),
-                const SizedBox(width: 20),
-                ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(Icons.contact_phone),
-                  label: const Text('Contact'),
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 12.0),
-                    textStyle: const TextStyle(fontSize: 10),
-                  ),
-                ),
-                const SizedBox(width: 20),
-                ElevatedButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(Icons.contact_phone),
-                  label: const Text('Search'),
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16.0, vertical: 12.0),
-                    textStyle: const TextStyle(fontSize: 10),
-                  ),
-                ),
-              ],
-            ),
-          ),
         ],
       ),
+      bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Color.fromARGB(255, 104, 88, 88),
+          unselectedItemColor: Colors.black,
+          selectedItemColor: Colors.red,
+          onTap: (value) {},
+          items: [
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.home), label: 'home'),
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.room_service), label: 'Services'),
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.search), label: 'Search'),
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.join_full), label: 'Join'),
+            const BottomNavigationBarItem(
+                icon: Icon(Icons.contact_phone), label: 'Contact'),
+          ]),
     );
   }
 }
