@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_field, prefer_final_fields
 
 import 'package:flutter/material.dart';
+import 'package:profile_app/screens/services_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -26,8 +27,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: double.infinity,
                     height: 200, // Adjust the height as needed
                     decoration: BoxDecoration(
-                      border: Border.all(color: Colors.blue, width: 3),
-                      borderRadius: BorderRadius.circular(15),
+                      // border: Border.all(color: Colors.blue, width: 3),
+                      borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(15.0),
+                          bottomRight: Radius.circular(15.0)),
                       image: const DecorationImage(
                         image: AssetImage('assets/pic2.jpg'),
                         fit: BoxFit.cover,
@@ -161,24 +164,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Color.fromARGB(255, 206, 194, 194),
-          unselectedItemColor: Colors.black,
-          selectedItemColor: Colors.red,
-          type: BottomNavigationBarType.fixed,
-          onTap: (value) {},
-          items: [
-            const BottomNavigationBarItem(
-                icon: Icon(Icons.home), label: 'Home'),
-            const BottomNavigationBarItem(
-                icon: Icon(Icons.room_service), label: 'Services'),
-            const BottomNavigationBarItem(
-                icon: Icon(Icons.search), label: 'Search'),
-            const BottomNavigationBarItem(
-                icon: Icon(Icons.join_full), label: 'Join'),
-            const BottomNavigationBarItem(
-                icon: Icon(Icons.contact_phone), label: 'Contact'),
-          ]),
     );
   }
 }
