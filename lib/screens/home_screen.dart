@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.only(left: 17.0, right: 17.0),
                   child: Container(
                     width: double.infinity,
-                    height: 200, // Adjust the height as needed
+                    height: 200,
                     decoration: BoxDecoration(
                       // border: Border.all(color: Colors.blue, width: 3),
                       borderRadius: BorderRadius.only(

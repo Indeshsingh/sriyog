@@ -7,7 +7,7 @@ import 'package:profile_app/screens/home_screen.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    title: 'MyApp',
+    title: 'Sriyog Demo',
     home: Scaffold(
         appBar: AppBar(
           backgroundColor: Color.fromARGB(255, 220, 216, 216),

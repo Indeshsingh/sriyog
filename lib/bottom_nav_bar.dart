@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:profile_app/screens/contact_screen.dart';
 import 'package:profile_app/screens/home_screen.dart';
 import 'package:profile_app/screens/join_screen.dart';
 import 'package:profile_app/screens/search_screen.dart';
@@ -18,7 +19,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
     HomeScreen(),
     ServicesScreen(),
     SearchScreen(),
-    JoinScreen()
+    JoinScreen(),
+    ContactScreen()
   ];
   @override
   Widget build(BuildContext context) {
