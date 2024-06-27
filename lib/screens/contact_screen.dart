@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
@@ -44,13 +44,61 @@ class ContactScreen extends StatelessWidget {
                 fontSize: 30.0,
               ),
             ),
-            Text(
-              'Above ...',
-              style: TextStyle(
-                fontSize: 16.0,
-                color: Colors.black87,
-              ),
+            SizedBox(
+              height: 10.0,
             ),
+            Row(
+              children: [
+                Icon(Icons.location_on),
+                Text(
+                  'Above ',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                    color: Colors.black87,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Row(
+              children: [
+                Icon(Icons.mail),
+                Text(
+                  '| mail',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                  ),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Row(
+              children: [
+                Icon(Icons.call),
+                Text(
+                  'call',
+                  style: TextStyle(fontSize: 16.0),
+                )
+              ],
+            ),
+            SizedBox(
+              height: 10.0,
+            ),
+            Row(
+              children: [
+                Icon(Icons.web),
+                Text(
+                  'web',
+                  style: TextStyle(
+                    fontSize: 16.0,
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),
