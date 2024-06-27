@@ -10,21 +10,40 @@ class ServicesScreen extends StatelessWidget {
         crossAxisCount: 3,
         crossAxisSpacing: 4.0,
         mainAxisSpacing: 8.0,
-        children: List.generate(11, (index) {
-          return Center(
-            child: Container(
-              color: Colors.blue,
-              height: 100.0,
-              width: 100.0,
-              child: Center(
-                child: Text(
-                  'Item $index',
-                  style: TextStyle(color: Colors.white, fontSize: 16.0),
-                ),
-              ),
-            ),
-          );
-        }),
+        children: [
+          Container(
+            padding: EdgeInsets.all(18),
+            child: Image.asset('assets/contractor.png'),
+          ),
+          Container(
+            padding: EdgeInsets.all(18),
+            child: Image.asset('assets/plumber.png'),
+          ),
+          Container(
+            padding: EdgeInsets.all(18),
+            child: Image.asset('assets/priest.png'),
+          ),
+          Container(
+            padding: EdgeInsets.all(18),
+            child: Image.asset('assets/outlet.png'),
+          ),
+          Container(
+            padding: EdgeInsets.all(18),
+            child: Image.asset('assets/contractor.png'),
+          ),
+          Container(
+            padding: EdgeInsets.all(18),
+            child: Image.asset('assets/contractor.png'),
+          ),
+          Container(
+            padding: EdgeInsets.all(18),
+            child: Image.asset('assets/contractor.png'),
+          ),
+          Container(
+            padding: EdgeInsets.all(18),
+            child: Image.asset('assets/contractor.png'),
+          ),
+        ],
       ),
     );
   }
