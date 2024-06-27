@@ -15,7 +15,7 @@ class ContactScreen extends StatelessWidget {
           children: <Widget>[
             Container(
               width: double.infinity,
-              height: 300.0,
+              height: 304.0,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(15.0),
