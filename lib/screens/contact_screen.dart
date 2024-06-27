@@ -22,7 +22,7 @@ class ContactScreen extends StatelessWidget {
                   bottomRight: Radius.circular(15.0),
                 ),
                 image: DecorationImage(
-                  image: AssetImage('assets/pic2.jpg'),
+                  image: AssetImage('assets/Biratnagar.png'),
                   fit: BoxFit.cover,
                 ),
               ),

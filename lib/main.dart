@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:profile_app/bottom_nav_bar.dart';
-import 'package:profile_app/screens/home_screen.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -22,11 +21,15 @@ void main() {
                 ),
               ),
               Text(
-                'SRIYOG | Biratnagar',
+                'SRIYOG|',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              Text(
+                'Biratnagar',
+                style: TextStyle(fontSize: 16),
+              )
             ],
           ),
           actions: [

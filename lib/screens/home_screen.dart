@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_field, prefer_final_fields
 
 import 'package:flutter/material.dart';
-import 'package:profile_app/screens/services_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -32,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           bottomLeft: Radius.circular(15.0),
                           bottomRight: Radius.circular(15.0)),
                       image: const DecorationImage(
-                        image: AssetImage('assets/pic2.jpg'),
+                        image: AssetImage('assets/mountain.jpg'),
                         fit: BoxFit.cover,
                       ),
                     ),
