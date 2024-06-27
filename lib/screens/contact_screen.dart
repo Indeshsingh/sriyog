@@ -15,7 +15,7 @@ class ContactScreen extends StatelessWidget {
           children: <Widget>[
             Container(
               width: double.infinity,
-              height: 200.0,
+              height: 300.0,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(15.0),
@@ -47,57 +47,84 @@ class ContactScreen extends StatelessWidget {
             SizedBox(
               height: 10.0,
             ),
-            Row(
-              children: [
-                Icon(Icons.location_on),
-                Text(
-                  'Above ',
-                  style: TextStyle(
-                    fontSize: 16.0,
-                    color: Colors.black87,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Icon(Icons.location_on),
+                  Text(
+                    '|',
+                    style: TextStyle(fontSize: 35, fontWeight: FontWeight.w100),
                   ),
-                ),
-              ],
+                  Text(
+                    'Above Nepal SBI Bank Ltd.\n Himalyan Road, Biratnagar Nepal',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                    ),
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: 10.0,
             ),
-            Row(
-              children: [
-                Icon(Icons.mail),
-                Text(
-                  '| mail',
-                  style: TextStyle(
-                    fontSize: 16.0,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Icon(Icons.mail),
+                  Text(
+                    '|',
+                    style: TextStyle(fontSize: 35, fontWeight: FontWeight.w100),
                   ),
-                )
-              ],
+                  Text(
+                    'info@gmail.com',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                    ),
+                  )
+                ],
+              ),
             ),
             SizedBox(
               height: 10.0,
             ),
-            Row(
-              children: [
-                Icon(Icons.call),
-                Text(
-                  'call',
-                  style: TextStyle(fontSize: 16.0),
-                )
-              ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Icon(Icons.call),
+                  Text(
+                    '|',
+                    style: TextStyle(fontSize: 35, fontWeight: FontWeight.w100),
+                  ),
+                  Text(
+                    '+977-9852024365[Membership]\n +977-9820510359[Business]',
+                    style: TextStyle(fontSize: 16.0),
+                  )
+                ],
+              ),
             ),
             SizedBox(
               height: 10.0,
             ),
-            Row(
-              children: [
-                Icon(Icons.web),
-                Text(
-                  'web',
-                  style: TextStyle(
-                    fontSize: 16.0,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  Icon(Icons.web),
+                  Text(
+                    '|',
+                    style: TextStyle(fontSize: 35, fontWeight: FontWeight.w100),
                   ),
-                )
-              ],
+                  Text(
+                    'www.sriyog.com',
+                    style: TextStyle(
+                      fontSize: 16.0,
+                    ),
+                  )
+                ],
+              ),
             )
           ],
         ),
