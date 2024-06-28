@@ -15,13 +15,14 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   int _selectedIndex = 0;
 
-  List<Widget> _pages = [
-    HomeScreen(),
-    ServicesScreen(),
-    SearchScreen(),
-    JoinScreen(),
-    ContactScreen()
+  final List<Widget> _pages = [
+    const HomeScreen(),
+    const ServicesScreen(),
+    const SearchScreen(),
+    const JoinScreen(),
+    const ContactScreen()
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,24 +31,26 @@ class _BottomNavBarState extends State<BottomNavBar> {
         children: _pages,
       ),
       bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Color.fromARGB(255, 206, 194, 194),
-          unselectedItemColor: Colors.black,
-          selectedItemColor: Colors.red,
-          type: BottomNavigationBarType.fixed,
-          onTap: (value) {
-            setState(() {
-              _selectedIndex = value;
-            });
-          },
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.room_service), label: 'Services'),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-            BottomNavigationBarItem(icon: Icon(Icons.join_full), label: 'Join'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.contact_phone), label: 'Contact'),
-          ]),
+        backgroundColor: const Color.fromARGB(255, 206, 194, 194),
+        unselectedItemColor: Colors.grey,
+        selectedItemColor: Colors.black,
+        type: BottomNavigationBarType.fixed,
+        currentIndex: _selectedIndex,
+        onTap: (value) {
+          setState(() {
+            _selectedIndex = value;
+          });
+        },
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.room_service), label: 'Services'),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+          BottomNavigationBarItem(icon: Icon(Icons.join_full), label: 'Join'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.contact_phone), label: 'Contact'),
+        ],
+      ),
     );
   }
 }
