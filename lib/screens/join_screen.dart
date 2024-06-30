@@ -12,6 +12,8 @@ class JoinScreen extends StatefulWidget {
 class _JoinScreenState extends State<JoinScreen> {
   bool valueFirst = false; // Define the boolean variable
   final TextEditingController _name = TextEditingController();
+  String? _selectedProfession;
+  String? _selectedCity;
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +45,7 @@ class _JoinScreenState extends State<JoinScreen> {
                 Padding(
                   padding: EdgeInsets.all(8.0),
                   child: TextField(
+                    keyboardType: TextInputType.text,
                     controller: _name,
                     decoration: InputDecoration(
                       labelText: 'Full Name *',
@@ -57,8 +60,7 @@ class _JoinScreenState extends State<JoinScreen> {
                   padding: EdgeInsets.all(8.0),
                   child: TextField(
                     obscureText: true,
-                    //keyboardType: TextInputType.number,
-
+                    keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       labelText: 'Middle Name ',
                       focusColor: Colors.red,
@@ -72,6 +74,7 @@ class _JoinScreenState extends State<JoinScreen> {
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: TextField(
+                    keyboardType: TextInputType.text,
                     decoration: InputDecoration(
                       labelText: 'Last Name *',
                       border: OutlineInputBorder(),
@@ -81,13 +84,35 @@ class _JoinScreenState extends State<JoinScreen> {
                 const SizedBox(
                   height: 2,
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: TextField(
+                  child: DropdownButtonFormField<String>(
                     decoration: InputDecoration(
                       labelText: 'Profession *',
                       border: OutlineInputBorder(),
                     ),
+                    value: _selectedProfession,
+                    items: [
+                      'Electrician',
+                      'Carpenter',
+                      'Priest',
+                      'Painter',
+                      'Contractor',
+                      'Tubewell',
+                      'Outlet',
+                      'Aluminium',
+                      'Interior Decorator',
+                    ]
+                        .map((profession) => DropdownMenuItem<String>(
+                              value: profession,
+                              child: Text(profession),
+                            ))
+                        .toList(),
+                    onChanged: (value) {
+                      setState(() {
+                        _selectedProfession = value;
+                      });
+                    },
                   ),
                 ),
                 const SizedBox(
@@ -107,13 +132,29 @@ class _JoinScreenState extends State<JoinScreen> {
                     ),
                   ),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.all(8.0),
-                  child: TextField(
+                  child: DropdownButtonFormField<String>(
                     decoration: InputDecoration(
                       labelText: 'City *',
                       border: OutlineInputBorder(),
                     ),
+                    value: _selectedCity,
+                    items: [
+                      'Biratnagar',
+                      'Ithari',
+                      'Kathmandu',
+                    ]
+                        .map((city) => DropdownMenuItem<String>(
+                              value: city,
+                              child: Text(city),
+                            ))
+                        .toList(),
+                    onChanged: (value) {
+                      setState(() {
+                        _selectedCity = value;
+                      });
+                    },
                   ),
                 ),
                 Padding(
@@ -137,9 +178,8 @@ class _JoinScreenState extends State<JoinScreen> {
                 ),
                 ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor:
-                        WidgetStatePropertyAll(Color.fromARGB(255, 19, 18, 18)),
-                    //mouseCursor: WidgetStatePropertyAll()
+                    backgroundColor: MaterialStatePropertyAll(
+                        Color.fromARGB(255, 19, 18, 18)),
                   ),
                   onPressed: () {
                     if (valueFirst) {
