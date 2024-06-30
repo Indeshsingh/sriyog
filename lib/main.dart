@@ -9,25 +9,26 @@ void main() {
     title: 'Sriyog Demo',
     home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color.fromARGB(255, 220, 216, 216),
+          backgroundColor: Colors.white,
+          shadowColor: Colors.black,
           elevation: 10,
           titleSpacing: 0.0,
           title: const Row(
             children: [
               Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.only(left: 19.0),
                 child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/logo.png'),
+                  backgroundImage: AssetImage('assets/Pracas_sir.jpg'),
                 ),
               ),
               Text(
-                'SRIYOG|',
+                ' SRIYOG |',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
               ),
               Text(
-                'Biratnagar',
+                ' Biratnagar',
                 style: TextStyle(fontSize: 16),
               )
             ],
