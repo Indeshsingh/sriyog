@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_field, prefer_final_fields
 
 import 'package:flutter/material.dart';
+import 'package:profile_app/screens/Indeshdetails_screen.dart';
+import 'package:profile_app/screens/join_screen.dart';
 import 'package:profile_app/screens/services_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -198,11 +200,16 @@ class _HomeScreenState extends State<HomeScreen> {
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: InkWell(
+                  splashColor: Colors.blue,
+                  onDoubleTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => JoinScreen()));
+                  },
                   onTap: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => ServicesScreen()));
+                            builder: (context) => IndeshdetailsScreen()));
                   },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -29,13 +29,9 @@ class ServicesScreen extends StatelessWidget {
                       imagePath: 'assets/carpenter.png', text: 'Carpenter'),
                   ServiceItem(
                       imagePath: 'assets/interior_decorator.png',
-                      text: 'Interior Decorator'),
+                      text: 'InteriorDecorator'),
                   ServiceItem(
                       imagePath: 'assets/tubewell.png', text: 'Tubewell'),
-                  // ServiceItem(
-                  //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
-                  // ServiceItem(
-                  //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
                   // ServiceItem(
                   //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
                   // ServiceItem(

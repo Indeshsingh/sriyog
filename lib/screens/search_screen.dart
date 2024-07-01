@@ -1,8 +1,4 @@
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -11,8 +7,9 @@ class SearchScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(left: 10),
-        child: TextField(
+        margin: const EdgeInsets.only(top: 20),
+        padding: const EdgeInsets.only(left: 18, right: 18),
+        child: const TextField(
             decoration: InputDecoration(
           labelText: 'Search',
           border: OutlineInputBorder(),
