@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_field, prefer_final_fields
 
 import 'package:flutter/material.dart';
+import 'package:profile_app/screens/services_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -75,19 +76,30 @@ class _HomeScreenState extends State<HomeScreen> {
                 //physics: NeverScrollableScrollPhysics(),
                 child: Row(
                   children: [
-                    Column(
-                      children: [
-                        Image.asset(
-                          'assets/outlet.png',
-                          width: 82,
-                          height: 82,
-                        ),
-                        const SizedBox(height: 5),
-                        const Text(
-                          'Electrician',
-                          style: TextStyle(fontSize: 12),
-                        ),
-                      ],
+                    InkWell(
+                      splashColor: Colors.blueAccent,
+                      onLongPress: () {},
+                      onDoubleTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ServicesScreen()));
+                      },
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'assets/outlet.png',
+                            width: 82,
+                            height: 82,
+                          ),
+                          const SizedBox(height: 5),
+                          const Text(
+                            'Electrician',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(width: 10),
                     Column(
@@ -185,22 +197,30 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.all(8.0),
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    _buildProfessional(
-                      'assets/Pracas_sir.jpg',
-                      'Pracas',
-                    ),
-                    _buildProfessional('assets/Pracas_sir.jpg', 'Indesh'),
-                    _buildProfessional('assets/Pracas_sir.jpg', 'Prashant'),
-                    _buildProfessional('assets/Pracas_sir.jpg', 'Rajesh'),
-                    _buildProfessional('assets/Pracas_sir.jpg', 'Hari'),
-                    _buildProfessional('assets/Pracas_sir.jpg', 'Shyam'),
-                    _buildProfessional('assets/Pracas_sir.jpg', 'Suraj'),
-                    _buildProfessional('assets/Pracas_sir.jpg', 'Gopal'),
-                    _buildProfessional('assets/Pracas_sir.jpg', 'Rahul'),
-                  ],
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ServicesScreen()));
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      _buildProfessional(
+                        'assets/Pracas_sir.jpg',
+                        'Pracas',
+                      ),
+                      _buildProfessional('assets/Pracas_sir.jpg', 'Indesh'),
+                      _buildProfessional('assets/Pracas_sir.jpg', 'Prashant'),
+                      _buildProfessional('assets/Pracas_sir.jpg', 'Rajesh'),
+                      _buildProfessional('assets/Pracas_sir.jpg', 'Hari'),
+                      _buildProfessional('assets/Pracas_sir.jpg', 'Shyam'),
+                      _buildProfessional('assets/Pracas_sir.jpg', 'Suraj'),
+                      _buildProfessional('assets/Pracas_sir.jpg', 'Gopal'),
+                      _buildProfessional('assets/Pracas_sir.jpg', 'Rahul'),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -220,7 +240,7 @@ Widget _buildProfessional(String imagePath, String label) {
         //   height: 5,
         // ),
         Padding(
-          padding: const EdgeInsets.only(left: 9.0),
+          padding: EdgeInsets.only(left: 9.0),
           child: CircleAvatar(
             backgroundImage: AssetImage(imagePath),
             radius: 42,
