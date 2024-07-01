@@ -265,14 +265,86 @@ class _HomeScreenState extends State<HomeScreen> {
                         'Pracas',
                       ),
                     ),
-                    _buildProfessional('assets/Pracas_sir.jpg', 'Indesh'),
-                    _buildProfessional('assets/Pracas_sir.jpg', 'Prashant'),
-                    _buildProfessional('assets/Pracas_sir.jpg', 'Rajesh'),
-                    _buildProfessional('assets/Pracas_sir.jpg', 'Hari'),
-                    _buildProfessional('assets/Pracas_sir.jpg', 'Shyam'),
-                    _buildProfessional('assets/Pracas_sir.jpg', 'Suraj'),
-                    _buildProfessional('assets/Pracas_sir.jpg', 'Gopal'),
-                    _buildProfessional('assets/Pracas_sir.jpg', 'Rahul'),
+                    InkWell(
+                        splashColor: Colors.blue,
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => IndeshdetailsScreen()));
+                        },
+                        child: _buildProfessional(
+                            'assets/Pracas_sir.jpg', 'Indesh')),
+                    InkWell(
+                        splashColor: Colors.blue,
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => IndeshdetailsScreen()));
+                        },
+                        child: _buildProfessional(
+                            'assets/Pracas_sir.jpg', 'Prashant')),
+                    InkWell(
+                        splashColor: Colors.blue,
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => IndeshdetailsScreen()));
+                        },
+                        child: _buildProfessional(
+                            'assets/Pracas_sir.jpg', 'Rajesh')),
+                    InkWell(
+                        splashColor: Colors.blue,
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => IndeshdetailsScreen()));
+                        },
+                        child: _buildProfessional(
+                            'assets/Pracas_sir.jpg', 'Hari')),
+                    InkWell(
+                        splashColor: Colors.blue,
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => IndeshdetailsScreen()));
+                        },
+                        child: _buildProfessional(
+                            'assets/Pracas_sir.jpg', 'Shyam')),
+                    InkWell(
+                        splashColor: Colors.blue,
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => IndeshdetailsScreen()));
+                        },
+                        child: _buildProfessional(
+                            'assets/Pracas_sir.jpg', 'Suraj')),
+                    InkWell(
+                        splashColor: Colors.blue,
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => IndeshdetailsScreen()));
+                        },
+                        child: _buildProfessional(
+                            'assets/Pracas_sir.jpg', 'Gopal')),
+                    InkWell(
+                        splashColor: Colors.blue,
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => IndeshdetailsScreen()));
+                        },
+                        child: _buildProfessional(
+                            'assets/Pracas_sir.jpg', 'Rahul')),
                   ],
                 ),
               ),
