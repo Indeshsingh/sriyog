@@ -199,35 +199,37 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.all(8.0),
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                child: InkWell(
-                  splashColor: Colors.blue,
-                  onDoubleTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => JoinScreen()));
-                  },
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => IndeshdetailsScreen()));
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      _buildProfessional(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    InkWell(
+                      splashColor: Colors.blue,
+                      onDoubleTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => JoinScreen()));
+                      },
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => IndeshdetailsScreen()));
+                      },
+                      child: _buildProfessional(
                         'assets/Pracas_sir.jpg',
                         'Pracas',
                       ),
-                      _buildProfessional('assets/Pracas_sir.jpg', 'Indesh'),
-                      _buildProfessional('assets/Pracas_sir.jpg', 'Prashant'),
-                      _buildProfessional('assets/Pracas_sir.jpg', 'Rajesh'),
-                      _buildProfessional('assets/Pracas_sir.jpg', 'Hari'),
-                      _buildProfessional('assets/Pracas_sir.jpg', 'Shyam'),
-                      _buildProfessional('assets/Pracas_sir.jpg', 'Suraj'),
-                      _buildProfessional('assets/Pracas_sir.jpg', 'Gopal'),
-                      _buildProfessional('assets/Pracas_sir.jpg', 'Rahul'),
-                    ],
-                  ),
+                    ),
+                    _buildProfessional('assets/Pracas_sir.jpg', 'Indesh'),
+                    _buildProfessional('assets/Pracas_sir.jpg', 'Prashant'),
+                    _buildProfessional('assets/Pracas_sir.jpg', 'Rajesh'),
+                    _buildProfessional('assets/Pracas_sir.jpg', 'Hari'),
+                    _buildProfessional('assets/Pracas_sir.jpg', 'Shyam'),
+                    _buildProfessional('assets/Pracas_sir.jpg', 'Suraj'),
+                    _buildProfessional('assets/Pracas_sir.jpg', 'Gopal'),
+                    _buildProfessional('assets/Pracas_sir.jpg', 'Rahul'),
+                  ],
                 ),
               ),
             ),
