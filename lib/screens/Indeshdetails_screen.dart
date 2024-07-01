@@ -44,7 +44,7 @@ class IndeshdetailsScreen extends StatelessWidget {
                     height: 5,
                   ),
                   Text(
-                    'working hours:10:00AM-5:30PM',
+                    'working hours:10:00AM-5:30PM(NPT)',
                     style: TextStyle(fontSize: 10),
                   ),
                   SizedBox(

@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:profile_app/screens/Indeshdetails_screen.dart';
 import 'package:profile_app/screens/join_screen.dart';
+import 'package:profile_app/screens/search_screen.dart';
 import 'package:profile_app/screens/services_screen.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -104,79 +105,121 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     const SizedBox(width: 10),
-                    Column(
-                      children: [
-                        Image.asset(
-                          'assets/contractor.png',
-                          width: 82,
-                          height: 82,
-                        ),
-                        const SizedBox(height: 5),
-                        const Text(
-                          'Contractor',
-                          style: TextStyle(fontSize: 12),
-                        ),
-                      ],
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SearchScreen()));
+                      },
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'assets/contractor.png',
+                            width: 82,
+                            height: 82,
+                          ),
+                          const SizedBox(height: 5),
+                          const Text(
+                            'Contractor',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(width: 10),
-                    Column(
-                      children: [
-                        Image.asset(
-                          'assets/priest.png',
-                          width: 82,
-                          height: 82,
-                        ),
-                        const SizedBox(height: 5),
-                        const Text(
-                          'Priest',
-                          style: TextStyle(fontSize: 12),
-                        ),
-                      ],
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SearchScreen()));
+                      },
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'assets/priest.png',
+                            width: 82,
+                            height: 82,
+                          ),
+                          const SizedBox(height: 5),
+                          const Text(
+                            'Priest',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(width: 10),
-                    Column(
-                      children: [
-                        Image.asset(
-                          'assets/plumber.png',
-                          width: 82,
-                          height: 82,
-                        ),
-                        const SizedBox(height: 5),
-                        const Text(
-                          'Plumber',
-                          style: TextStyle(fontSize: 12),
-                        ),
-                      ],
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SearchScreen()));
+                      },
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'assets/plumber.png',
+                            width: 82,
+                            height: 82,
+                          ),
+                          const SizedBox(height: 5),
+                          const Text(
+                            'Plumber',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(width: 10),
-                    Column(
-                      children: [
-                        Image.asset(
-                          'assets/painter.png',
-                          width: 82,
-                          height: 82,
-                        ),
-                        const SizedBox(height: 5),
-                        const Text(
-                          'Painter',
-                          style: TextStyle(fontSize: 12),
-                        ),
-                      ],
+                    InkWell(
+                      splashColor: Colors.blue,
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SearchScreen()));
+                      },
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'assets/painter.png',
+                            width: 82,
+                            height: 82,
+                          ),
+                          const SizedBox(height: 5),
+                          const Text(
+                            'Painter',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ],
+                      ),
                     ),
                     const SizedBox(width: 10),
-                    Column(
-                      children: [
-                        Image.asset(
-                          'assets/tubewell.png',
-                          width: 82,
-                          height: 82,
-                        ),
-                        const SizedBox(height: 5),
-                        const Text(
-                          'Tubewell',
-                          style: TextStyle(fontSize: 12),
-                        ),
-                      ],
+                    InkWell(
+                      splashColor: Colors.blue,
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SearchScreen()));
+                      },
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'assets/tubewell.png',
+                            width: 82,
+                            height: 82,
+                          ),
+                          const SizedBox(height: 5),
+                          const Text(
+                            'Tubewell',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -203,6 +246,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     InkWell(
+                      // hoverColor: Colors.red,
                       splashColor: Colors.blue,
                       onDoubleTap: () {
                         Navigator.push(

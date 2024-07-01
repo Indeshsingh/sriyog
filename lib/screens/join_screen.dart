@@ -27,7 +27,7 @@ class _JoinScreenState extends State<JoinScreen> {
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: CircleAvatar(
-                    backgroundImage: AssetImage('assets/logo.png'),
+                    backgroundImage: AssetImage('assets/Pracas_sir.jpg'),
                     radius: 85,
                   ),
                 ),
@@ -49,6 +49,15 @@ class _JoinScreenState extends State<JoinScreen> {
                     controller: _name,
                     decoration: InputDecoration(
                       labelText: 'Full Name *',
+                      // prefixIcon: Padding(
+                      //   padding: const EdgeInsets.all(8.0),
+                      //   child: SizedBox(
+                      //       height: 30,
+                      //       width: 30,
+                      //       child: _name.text == "+91"
+                      //           ? Image.asset('assets/Biratnagar.png')
+                      //           : Image.asset('assets/carpenter.png')),
+                      // ),
                       border: OutlineInputBorder(),
                     ),
                   ),
@@ -128,6 +137,16 @@ class _JoinScreenState extends State<JoinScreen> {
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                       labelText: 'Phone Number *',
+                      prefixIcon: Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          height: 25,
+                          width: 25,
+                          child: _name.text == '+91'
+                              ? Image.asset('assets/Nepal_flag.png')
+                              : Image.asset('assets/Nepal_flag.png'),
+                        ),
+                      ),
                       border: OutlineInputBorder(),
                     ),
                   ),
