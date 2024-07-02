@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:profile_app/bottom_nav_bar.dart';
 import 'package:profile_app/screens/home_screen.dart';
 
 class ContactScreen extends StatefulWidget {
@@ -10,14 +11,20 @@ class ContactScreen extends StatefulWidget {
   State<ContactScreen> createState() => _ContactScreenState();
 }
 
-bool canPop = true;
-
 class _ContactScreenState extends State<ContactScreen> {
   @override
   Widget build(BuildContext context) {
     return PopScope(
+      canPop: false,
       onPopInvoked: (didPop) async {
         if (didPop) {
+          return;
+        } else {
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => BottomNavBar()),
+            (Route<dynamic> Route) => false,
+          );
           return;
         }
       },
