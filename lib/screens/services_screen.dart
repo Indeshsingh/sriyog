@@ -1,68 +1,87 @@
 import 'package:flutter/material.dart';
+import 'package:profile_app/bottom_nav_bar.dart';
+import 'package:profile_app/screens/home_screen.dart';
 
-class ServicesScreen extends StatelessWidget {
+class ServicesScreen extends StatefulWidget {
   const ServicesScreen({super.key});
 
   @override
+  State<ServicesScreen> createState() => _ServicesScreenState();
+}
+
+class _ServicesScreenState extends State<ServicesScreen> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(left: 18.0, right: 18.0),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              GridView.count(
-                crossAxisCount: 3,
-                crossAxisSpacing: 20.0,
-                mainAxisSpacing: 10,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                children: const [
-                  ServiceItem(
-                      imagePath: 'assets/contractor.png', text: 'Contractor'),
-                  ServiceItem(imagePath: 'assets/plumber.png', text: 'Plumber'),
-                  ServiceItem(imagePath: 'assets/priest.png', text: 'Priest'),
-                  ServiceItem(imagePath: 'assets/outlet.png', text: 'Outlet'),
-                  ServiceItem(
-                      imagePath: 'assets/aluminium.png', text: 'Aluminium'),
-                  ServiceItem(
-                      imagePath: 'assets/carpenter.png', text: 'Carpenter'),
-                  ServiceItem(
-                      imagePath: 'assets/interior_decorator.png',
-                      text: 'InteriorDecorator'),
-                  ServiceItem(
-                      imagePath: 'assets/tubewell.png', text: 'Tubewell'),
-                  // ServiceItem(
-                  //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
-                  // ServiceItem(
-                  //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
-                  // ServiceItem(
-                  //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
-                  // ServiceItem(
-                  //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
-                  // ServiceItem(
-                  //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
-                  // ServiceItem(
-                  //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
-                  // ServiceItem(
-                  //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
-                  // ServiceItem(
-                  //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
-                  // ServiceItem(
-                  //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
-                  // ServiceItem(
-                  //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
-                  // ServiceItem(
-                  //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
-                  // ServiceItem(
-                  //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
-                  // ServiceItem(
-                  //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
-                  // ServiceItem(
-                  //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
-                ],
-              ),
-            ],
+    return PopScope(
+      // canPop: false,
+      onPopInvoked: (didPop) async {
+        if (didPop) {
+          return;
+        } else {
+          // Navigator.pop(
+          //     context, MaterialPageRoute(builder: (context) => HomeScreen()));
+        }
+      },
+      child: Scaffold(
+        body: Padding(
+          padding: const EdgeInsets.only(left: 18.0, right: 18.0),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                GridView.count(
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 20.0,
+                  mainAxisSpacing: 10,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  children: const [
+                    ServiceItem(
+                        imagePath: 'assets/contractor.png', text: 'Contractor'),
+                    ServiceItem(
+                        imagePath: 'assets/plumber.png', text: 'Plumber'),
+                    ServiceItem(imagePath: 'assets/priest.png', text: 'Priest'),
+                    ServiceItem(imagePath: 'assets/outlet.png', text: 'Outlet'),
+                    ServiceItem(
+                        imagePath: 'assets/aluminium.png', text: 'Aluminium'),
+                    ServiceItem(
+                        imagePath: 'assets/carpenter.png', text: 'Carpenter'),
+                    ServiceItem(
+                        imagePath: 'assets/interior_decorator.png',
+                        text: 'InteriorDecorator'),
+                    ServiceItem(
+                        imagePath: 'assets/tubewell.png', text: 'Tubewell'),
+                    // ServiceItem(
+                    //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
+                    // ServiceItem(
+                    //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
+                    // ServiceItem(
+                    //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
+                    // ServiceItem(
+                    //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
+                    // ServiceItem(
+                    //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
+                    // ServiceItem(
+                    //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
+                    // ServiceItem(
+                    //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
+                    // ServiceItem(
+                    //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
+                    // ServiceItem(
+                    //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
+                    // ServiceItem(
+                    //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
+                    // ServiceItem(
+                    //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
+                    // ServiceItem(
+                    //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
+                    // ServiceItem(
+                    //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
+                    // ServiceItem(
+                    //     imagePath: 'assets/tubewell.png', text: 'Tubewell'),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

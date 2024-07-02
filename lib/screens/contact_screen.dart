@@ -15,16 +15,18 @@ class _ContactScreenState extends State<ContactScreen> {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      canPop: false,
+      canPop: true,
       onPopInvoked: (didPop) async {
         if (didPop) {
           return;
         } else {
-          Navigator.pushAndRemoveUntil(
+          Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => BottomNavBar()),
-            (Route<dynamic> Route) => false,
-          );
+            MaterialPageRoute(builder: (context) => HomeScreen()),
+          ).then((dynamic) => setState(() {}));
+          // ignore: non_constant_identifier_names
+          //(Route<dynamic> Route) => false,
+
           return;
         }
       },

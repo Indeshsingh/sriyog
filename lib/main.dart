@@ -25,6 +25,7 @@ void main() {
                 ' SRIYOG |',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
+                  //fontSize: 20,
                 ),
               ),
               Text(
