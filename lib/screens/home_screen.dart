@@ -23,17 +23,27 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
+              padding: EdgeInsets.only(left: 17.0, right: 17.0, top: 10.0),
+              child: Text(
+                'Book of the Day',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Padding(
               padding: const EdgeInsets.only(left: 17.0, right: 17.0),
               child: Container(
                 width: double.infinity,
-                height: 300,
+                height: 285,
                 decoration: BoxDecoration(
                   // border: Border.all(color: Colors.blue, width: 3),
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(15.0),
                       bottomRight: Radius.circular(15.0)),
                   image: const DecorationImage(
-                    image: AssetImage('assets/mountain.jpg'),
+                    image: AssetImage('assets/bhagavad_gita.jpg'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -52,7 +62,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const Padding(
               padding: EdgeInsets.only(left: 16.0, top: 5.0),
               child: Text(
-                'Professional Marketplace',
+                'Explore Now ',
                 style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
@@ -65,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const Padding(
               padding: EdgeInsets.only(left: 16.0),
               child: Text(
-                '// Top Services',
+                '// Trending Now',
                 style: TextStyle(fontSize: 18, fontStyle: FontStyle.italic),
               ),
             ),
@@ -231,7 +241,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const Padding(
               padding: EdgeInsets.only(left: 14.0),
               child: Text(
-                '// Top Professionals',
+                '// Categories',
                 style: TextStyle(fontSize: 18, fontStyle: FontStyle.italic),
               ),
             ),

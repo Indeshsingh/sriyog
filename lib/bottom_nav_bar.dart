@@ -43,7 +43,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               ),
             ),
             Text(
-              ' SRIYOG |',
+              ' Bookz |',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 //fontSize: 20,
@@ -80,7 +80,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.room_service), label: 'Services'),
+              icon: Icon(Icons.room_service), label: 'Library'),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
           BottomNavigationBarItem(icon: Icon(Icons.join_full), label: 'Join'),
           BottomNavigationBarItem(
