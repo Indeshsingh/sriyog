@@ -5,6 +5,7 @@ import 'package:profile_app/screens/Indeshdetails_screen.dart';
 import 'package:profile_app/screens/join_screen.dart';
 import 'package:profile_app/screens/search_screen.dart';
 import 'package:profile_app/screens/services_screen.dart';
+import 'package:scroll_loop_auto_scroll/scroll_loop_auto_scroll.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -36,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: const EdgeInsets.only(left: 17.0, right: 17.0),
               child: Container(
                 width: double.infinity,
-                height: 285,
+                height: 260,
                 decoration: BoxDecoration(
                   // border: Border.all(color: Colors.blue, width: 3),
                   borderRadius: BorderRadius.only(
@@ -84,7 +85,13 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 16.0),
-              child: SingleChildScrollView(
+              child: ScrollLoopAutoScroll(
+                duration: Duration(seconds: 100),
+                delay: Duration(seconds: 1),
+                delayAfterScrollInput: Duration(seconds: 1),
+                enableScrollInput: true,
+                gap: 25,
+
                 scrollDirection: Axis.horizontal,
                 //physics: NeverScrollableScrollPhysics(),
                 child: Row(
@@ -102,13 +109,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         children: [
                           Image.asset(
-                            'assets/outlet.png',
+                            'assets/bhagavad_gita.jpg',
                             width: 82,
                             height: 82,
                           ),
                           const SizedBox(height: 5),
                           const Text(
-                            'Electrician',
+                            'Bhagavadgita',
                             style: TextStyle(fontSize: 12),
                           ),
                         ],
@@ -125,7 +132,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         children: [
                           Image.asset(
-                            'assets/contractor.png',
+                            'assets/bhagavad_gita.jpg',
                             width: 82,
                             height: 82,
                           ),
@@ -148,7 +155,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         children: [
                           Image.asset(
-                            'assets/priest.png',
+                            'assets/bhagavad_gita.jpg',
                             width: 82,
                             height: 82,
                           ),
@@ -171,7 +178,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         children: [
                           Image.asset(
-                            'assets/plumber.png',
+                            'assets/bhagavad_gita.jpg',
                             width: 82,
                             height: 82,
                           ),
@@ -195,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         children: [
                           Image.asset(
-                            'assets/painter.png',
+                            'assets/bhagavad_gita.jpg',
                             width: 82,
                             height: 82,
                           ),
@@ -219,7 +226,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         children: [
                           Image.asset(
-                            'assets/tubewell.png',
+                            'assets/bhagavad_gita.jpg',
                             width: 82,
                             height: 82,
                           ),
@@ -272,7 +279,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       },
                       child: _buildProfessional(
                         'assets/Pracas_sir.jpg',
-                        'Pracas',
+                        'Lifestyle',
                       ),
                     ),
                     InkWell(
@@ -284,7 +291,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   builder: (context) => IndeshdetailsScreen()));
                         },
                         child: _buildProfessional(
-                            'assets/Pracas_sir.jpg', 'Indesh')),
+                            'assets/Pracas_sir.jpg', 'Poetry&\nDrama')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
@@ -294,7 +301,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   builder: (context) => IndeshdetailsScreen()));
                         },
                         child: _buildProfessional(
-                            'assets/Pracas_sir.jpg', 'Prashant')),
+                            'assets/Pracas_sir.jpg', 'Regional&\nClutural')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
@@ -304,7 +311,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   builder: (context) => IndeshdetailsScreen()));
                         },
                         child: _buildProfessional(
-                            'assets/Pracas_sir.jpg', 'Rajesh')),
+                            'assets/Pracas_sir.jpg', 'Children\nBooks')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
@@ -314,7 +321,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   builder: (context) => IndeshdetailsScreen()));
                         },
                         child: _buildProfessional(
-                            'assets/Pracas_sir.jpg', 'Hari')),
+                            'assets/Pracas_sir.jpg', 'Fiction')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
@@ -324,7 +331,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   builder: (context) => IndeshdetailsScreen()));
                         },
                         child: _buildProfessional(
-                            'assets/Pracas_sir.jpg', 'Shyam')),
+                            'assets/Pracas_sir.jpg', 'Non-Fiction')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
