@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:profile_app/bottom_nav_bar.dart';
-import 'package:profile_app/screens/home_screen.dart';
 
 class ContactScreen extends StatefulWidget {
   const ContactScreen({super.key});
@@ -15,14 +14,14 @@ class _ContactScreenState extends State<ContactScreen> {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      canPop: true,
+      canPop: false,
       onPopInvoked: (didPop) async {
         if (didPop) {
           return;
         } else {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => HomeScreen()),
+            MaterialPageRoute(builder: (context) => BottomNavBar()),
           ).then((dynamic) => setState(() {}));
           // ignore: non_constant_identifier_names
           //(Route<dynamic> Route) => false,

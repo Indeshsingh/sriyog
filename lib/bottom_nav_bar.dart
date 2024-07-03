@@ -28,6 +28,40 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.white,
+        shadowColor: Colors.black,
+        elevation: 10,
+        titleSpacing: 0.0,
+        title: const Row(
+          children: [
+            Padding(
+              padding: EdgeInsets.only(left: 19.0),
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/Pracas_sir.jpg'),
+              ),
+            ),
+            Text(
+              ' SRIYOG |',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                //fontSize: 20,
+              ),
+            ),
+            Text(
+              ' Biratnagar',
+              style: TextStyle(fontSize: 16),
+            )
+          ],
+        ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.location_on),
+            onPressed: () {},
+          ),
+        ],
+      ),
       body: IndexedStack(
         index: _selectedIndex,
         children: _pages,

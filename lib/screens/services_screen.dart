@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:profile_app/bottom_nav_bar.dart';
-import 'package:profile_app/screens/home_screen.dart';
 
 class ServicesScreen extends StatefulWidget {
   const ServicesScreen({super.key});
