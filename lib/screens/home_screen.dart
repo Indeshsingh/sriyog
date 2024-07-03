@@ -278,7 +278,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 builder: (context) => IndeshdetailsScreen()));
                       },
                       child: _buildProfessional(
-                        'assets/Pracas_sir.jpg',
+                        'assets/sims_lifestyle.jpg',
                         'Lifestyle',
                       ),
                     ),
@@ -291,7 +291,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   builder: (context) => IndeshdetailsScreen()));
                         },
                         child: _buildProfessional(
-                            'assets/Pracas_sir.jpg', 'Poetry&\nDrama')),
+                            'assets/drama.jpg', 'Poetry&\nDrama')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
@@ -301,7 +301,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   builder: (context) => IndeshdetailsScreen()));
                         },
                         child: _buildProfessional(
-                            'assets/Pracas_sir.jpg', 'Regional&\nClutural')),
+                            'assets/cultural.jpg', 'Regional&\nCultural')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
@@ -311,7 +311,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                   builder: (context) => IndeshdetailsScreen()));
                         },
                         child: _buildProfessional(
-                            'assets/Pracas_sir.jpg', 'Children\nBooks')),
+                            'assets/children.jpg', 'Children\nBooks')),
+                    InkWell(
+                        splashColor: Colors.blue,
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => IndeshdetailsScreen()));
+                        },
+                        child:
+                            _buildProfessional('assets/drama.jpg', 'Fiction')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
@@ -321,7 +331,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   builder: (context) => IndeshdetailsScreen()));
                         },
                         child: _buildProfessional(
-                            'assets/Pracas_sir.jpg', 'Fiction')),
+                            'assets/drama.jpg', 'Non-Fiction')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
@@ -330,8 +340,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               MaterialPageRoute(
                                   builder: (context) => IndeshdetailsScreen()));
                         },
-                        child: _buildProfessional(
-                            'assets/Pracas_sir.jpg', 'Non-Fiction')),
+                        child: _buildProfessional('assets/drama.jpg', 'Suraj')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
@@ -340,8 +349,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               MaterialPageRoute(
                                   builder: (context) => IndeshdetailsScreen()));
                         },
-                        child: _buildProfessional(
-                            'assets/Pracas_sir.jpg', 'Suraj')),
+                        child: _buildProfessional('assets/drama.jpg', 'Gopal')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
@@ -350,18 +358,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               MaterialPageRoute(
                                   builder: (context) => IndeshdetailsScreen()));
                         },
-                        child: _buildProfessional(
-                            'assets/Pracas_sir.jpg', 'Gopal')),
-                    InkWell(
-                        splashColor: Colors.blue,
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => IndeshdetailsScreen()));
-                        },
-                        child: _buildProfessional(
-                            'assets/Pracas_sir.jpg', 'Rahul')),
+                        child: _buildProfessional('assets/drama.jpg', 'Rahul')),
                   ],
                 ),
               ),
