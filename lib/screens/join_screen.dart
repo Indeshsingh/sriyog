@@ -24,11 +24,21 @@ class _JoinScreenState extends State<JoinScreen> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage('assets/Pracas_sir.jpg'),
-                    radius: 85,
+                // ignore: avoid_unnecessary_containers
+                Container(
+                  // decoration: BoxDecoration(boxShadow: [
+                  //   BoxShadow(
+                  //       color: Color.fromARGB(66, 164, 150, 150),
+                  //       blurRadius: 5,
+                  //       blurStyle: BlurStyle.normal,
+                  //       spreadRadius: 5)
+                  // ]),
+                  child: const Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: CircleAvatar(
+                      backgroundImage: AssetImage('assets/Pracas_sir.jpg'),
+                      radius: 85,
+                    ),
                   ),
                 ),
                 const Text(
@@ -131,8 +141,11 @@ class _JoinScreenState extends State<JoinScreen> {
                   padding: EdgeInsets.all(8.0),
                   child: TextField(
                     obscureText: true,
+                    obscuringCharacter: '*',
                     focusNode: FocusNode(
                       canRequestFocus: true,
+                      //skipTraversal: true,
+                      // descendantsAreFocusable: true,
                     ),
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
