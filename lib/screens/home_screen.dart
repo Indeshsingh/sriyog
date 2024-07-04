@@ -3,9 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:profile_app/screens/Indeshdetails_screen.dart';
 import 'package:profile_app/screens/join_screen.dart';
-import 'package:profile_app/screens/library_screen.dart';
 import 'package:profile_app/screens/search_screen.dart';
-import 'package:scroll_loop_auto_scroll/scroll_loop_auto_scroll.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -90,12 +88,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 16.0),
-              child: ScrollLoopAutoScroll(
-                duration: Duration(seconds: 100),
-                delay: Duration(seconds: 1),
-                delayAfterScrollInput: Duration(seconds: 1),
-                enableScrollInput: true,
-                gap: 25,
+              child: SingleChildScrollView(
+                // duration: Duration(seconds: 100),
+                // delay: Duration(seconds: 1),
+                // delayAfterScrollInput: Duration(seconds: 1),
+                // enableScrollInput: true,
+                // gap: 25,
 
                 scrollDirection: Axis.horizontal,
                 //physics: NeverScrollableScrollPhysics(),
@@ -109,7 +107,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LibraryScreen()));
+                                builder: (context) => IndeshdetailsScreen(
+                                      bookName:
+                                          'The Silent Patient\nby  Alex Michaelides',
+                                    )));
                       },
                       child: Column(
                         children: [
@@ -283,8 +284,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 builder: (context) => IndeshdetailsScreen()));
                       },
                       child: _buildProfessional(
-                        'assets/sims_lifestyle.jpg',
-                        'Lifestyle',
+                        'assets/pracas.jpg',
+                        'Pracas Upreti',
                       ),
                     ),
                     InkWell(
@@ -296,7 +297,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   builder: (context) => IndeshdetailsScreen()));
                         },
                         child: _buildProfessional(
-                            'assets/drama.jpg', 'Poetry&\nDrama')),
+                            'assets/chudaraj1.jpg', 'Chudaraj Poudel')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
@@ -306,7 +307,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   builder: (context) => IndeshdetailsScreen()));
                         },
                         child: _buildProfessional(
-                            'assets/cultural.jpg', 'Regional&\nCultural')),
+                            'assets/diwas.jpg', 'Diwas Poudel')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
@@ -316,17 +317,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   builder: (context) => IndeshdetailsScreen()));
                         },
                         child: _buildProfessional(
-                            'assets/children.jpg', 'Children\nBooks')),
-                    InkWell(
-                        splashColor: Colors.blue,
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => IndeshdetailsScreen()));
-                        },
-                        child:
-                            _buildProfessional('assets/drama.jpg', 'Fiction')),
+                            'assets/naman.jpg', 'Naman Kunwar')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
@@ -336,7 +327,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   builder: (context) => IndeshdetailsScreen()));
                         },
                         child: _buildProfessional(
-                            'assets/drama.jpg', 'Non-Fiction')),
+                            'assets/nirajan1.png', 'Nirajan Dahal')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
@@ -345,7 +336,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               MaterialPageRoute(
                                   builder: (context) => IndeshdetailsScreen()));
                         },
-                        child: _buildProfessional('assets/drama.jpg', 'Suraj')),
+                        child: _buildProfessional(
+                            'assets/isha.jpg', 'Isha Sunam')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
@@ -354,7 +346,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               MaterialPageRoute(
                                   builder: (context) => IndeshdetailsScreen()));
                         },
-                        child: _buildProfessional('assets/drama.jpg', 'Gopal')),
+                        child: _buildProfessional(
+                            'assets/rimesh.jpg', 'Rimesh Bhattarai')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
@@ -363,7 +356,18 @@ class _HomeScreenState extends State<HomeScreen> {
                               MaterialPageRoute(
                                   builder: (context) => IndeshdetailsScreen()));
                         },
-                        child: _buildProfessional('assets/drama.jpg', 'Rahul')),
+                        child: _buildProfessional(
+                            'assets/pramod.jpg', 'Pramod Mahato')),
+                    InkWell(
+                        splashColor: Colors.blue,
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => IndeshdetailsScreen()));
+                        },
+                        child: _buildProfessional(
+                            'assets/alisha.jpg', 'Alisha Ghimire')),
                   ],
                 ),
               ),
@@ -387,7 +391,9 @@ Widget _buildProfessional(String imagePath, String label) {
           padding: EdgeInsets.only(left: 9.0),
           child: CircleAvatar(
             backgroundImage: AssetImage(imagePath),
-            radius: 42,
+            // radius: 42,
+            minRadius: 20,
+            maxRadius: 45,
           ),
         ),
         const SizedBox(

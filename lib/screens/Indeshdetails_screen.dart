@@ -1,56 +1,59 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class IndeshdetailsScreen extends StatelessWidget {
-  const IndeshdetailsScreen({super.key});
+  final String? bookName;
+  const IndeshdetailsScreen({super.key, this.bookName});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Padding(
-        padding: EdgeInsets.only(left: 18.0, top: 90.0),
+        padding: const EdgeInsets.only(left: 18.0, top: 90.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            CircleAvatar(
-              backgroundImage: AssetImage('assets/logo.png'),
-              radius: 90,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset('assets/silent.png'),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 5.0),
+              padding: EdgeInsets.all(8.0),
               child: Column(
                 children: [
+                  // ignore: prefer_const_constructors
                   SizedBox(
                     height: 10,
                   ),
                   Text(
-                    'Indesh Singh',
+                    bookName ?? "",
                     style: TextStyle(fontSize: 20),
                   ),
                   SizedBox(
                     height: 5,
                   ),
                   Text(
-                    'Profession:Student',
+                    '',
                     style: TextStyle(fontSize: 15),
                   ),
                   SizedBox(
-                    height: 5,
+                    height: 1,
                   ),
                   Text(
-                    'City:Biratnagar',
+                    '#Fiction #Technological #Suspense',
                     style: TextStyle(fontSize: 15),
+                    // ),
+                    // SizedBox(
+                    //   height: 5,
+                    // ),
+                    // Text(
+                    //   'Working hours: 10:00 AM - 5:30 PM (NPT)',
+                    //   style: TextStyle(fontSize: 10),
+                    // ),
+                    // SizedBox(
+                    //   height: 20,
                   ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    'working hours:10:00AM-5:30PM(NPT)',
-                    style: TextStyle(fontSize: 10),
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Text(''),
                 ],
               ),
             )
