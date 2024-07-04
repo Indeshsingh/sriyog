@@ -3,8 +3,8 @@ import 'package:profile_app/screens/Indeshdetails_screen.dart';
 import 'package:profile_app/screens/contact_screen.dart';
 import 'package:profile_app/screens/home_screen.dart';
 import 'package:profile_app/screens/join_screen.dart';
+import 'package:profile_app/screens/library_screen.dart';
 import 'package:profile_app/screens/search_screen.dart';
-import 'package:profile_app/screens/services_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -18,7 +18,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   final List<Widget> _pages = [
     const HomeScreen(),
-    const ServicesScreen(),
+    const LibraryScreen(),
     const SearchScreen(),
     const JoinScreen(),
     const ContactScreen(),
@@ -51,7 +51,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               ),
             ),
             Text(
-              ' Biratnagar',
+              ' Explore Now',
               style: TextStyle(fontSize: 16),
             )
           ],

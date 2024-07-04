@@ -3,8 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:profile_app/screens/Indeshdetails_screen.dart';
 import 'package:profile_app/screens/join_screen.dart';
+import 'package:profile_app/screens/library_screen.dart';
 import 'package:profile_app/screens/search_screen.dart';
-import 'package:profile_app/screens/services_screen.dart';
 import 'package:scroll_loop_auto_scroll/scroll_loop_auto_scroll.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -40,12 +40,16 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: double.infinity,
                 height: 260,
                 decoration: BoxDecoration(
+                  color: Color.fromARGB(242, 99, 65, 194),
+                  // backgroundBlendMode: BlendMode.color,
                   // border: Border.all(color: Colors.blue, width: 3),
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(15.0),
-                      bottomRight: Radius.circular(15.0)),
+                      bottomRight: Radius.circular(15.0),
+                      topLeft: Radius.circular(15.0),
+                      topRight: Radius.circular(15.0)),
                   image: const DecorationImage(
-                    image: AssetImage('assets/bhagavad_gita.jpg'),
+                    image: AssetImage('assets/bhagavad_gita1.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -64,9 +68,9 @@ class _HomeScreenState extends State<HomeScreen> {
             const Padding(
               padding: EdgeInsets.only(left: 16.0, top: 5.0),
               child: Text(
-                'Explore Now ',
+                'Best Sellers ',
                 style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.normal),
               ),
@@ -77,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const Padding(
               padding: EdgeInsets.only(left: 16.0),
               child: Text(
-                '// Trending Now',
+                '// Popular Now',
                 style: TextStyle(fontSize: 18, fontStyle: FontStyle.italic),
               ),
             ),
@@ -105,18 +109,18 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => ServicesScreen()));
+                                builder: (context) => LibraryScreen()));
                       },
                       child: Column(
                         children: [
                           Image.asset(
-                            'assets/bhagavad_gita.jpg',
+                            'assets/silent.png',
                             width: 82,
                             height: 82,
                           ),
                           const SizedBox(height: 5),
                           const Text(
-                            'Bhagavadgita',
+                            'The Silent Patient',
                             style: TextStyle(fontSize: 12),
                           ),
                         ],
@@ -133,13 +137,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         children: [
                           Image.asset(
-                            'assets/bhagavad_gita.jpg',
+                            'assets/Rich_dad.png',
                             width: 82,
                             height: 82,
                           ),
                           const SizedBox(height: 5),
                           const Text(
-                            'Contractor',
+                            'Rich Dad Poor Dad',
                             style: TextStyle(fontSize: 12),
                           ),
                         ],
@@ -156,13 +160,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         children: [
                           Image.asset(
-                            'assets/bhagavad_gita.jpg',
+                            'assets/hunting.png',
                             width: 82,
                             height: 82,
                           ),
                           const SizedBox(height: 5),
                           const Text(
-                            'Priest',
+                            'Haunting Adeline ',
                             style: TextStyle(fontSize: 12),
                           ),
                         ],
@@ -179,37 +183,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         children: [
                           Image.asset(
-                            'assets/bhagavad_gita.jpg',
+                            'assets/mind-time.png',
                             width: 82,
                             height: 82,
                           ),
                           const SizedBox(height: 5),
                           const Text(
-                            'Plumber',
-                            style: TextStyle(fontSize: 12),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    InkWell(
-                      splashColor: Colors.blue,
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SearchScreen()));
-                      },
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            'assets/bhagavad_gita.jpg',
-                            width: 82,
-                            height: 82,
-                          ),
-                          const SizedBox(height: 5),
-                          const Text(
-                            'Painter',
+                            'Mind Management',
                             style: TextStyle(fontSize: 12),
                           ),
                         ],
@@ -227,13 +207,37 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         children: [
                           Image.asset(
-                            'assets/bhagavad_gita.jpg',
+                            'assets/five_seconds.png',
                             width: 82,
                             height: 82,
                           ),
                           const SizedBox(height: 5),
                           const Text(
-                            'Tubewell',
+                            'The 5 Second Rule',
+                            style: TextStyle(fontSize: 12),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    InkWell(
+                      splashColor: Colors.blue,
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SearchScreen()));
+                      },
+                      child: Column(
+                        children: [
+                          Image.asset(
+                            'assets/cant.png',
+                            width: 82,
+                            height: 82,
+                          ),
+                          const SizedBox(height: 5),
+                          const Text(
+                            "Can't Hurt Me",
                             style: TextStyle(fontSize: 12),
                           ),
                         ],
@@ -249,7 +253,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const Padding(
               padding: EdgeInsets.only(left: 14.0),
               child: Text(
-                '// Categories',
+                '// Best Authors',
                 style: TextStyle(fontSize: 18, fontStyle: FontStyle.italic),
               ),
             ),
