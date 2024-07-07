@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:profile_app/screens/Indeshdetails_screen.dart';
+import 'package:profile_app/screens/bookdetails_screen.dart';
 import 'package:profile_app/screens/contact_screen.dart';
 import 'package:profile_app/screens/home_screen.dart';
 import 'package:profile_app/screens/join_screen.dart';
@@ -22,7 +22,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     const SearchScreen(),
     const JoinScreen(),
     const ContactScreen(),
-    const IndeshdetailsScreen(),
+    const BookdetailsScreen(),
   ];
 
   @override

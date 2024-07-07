@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 
-class IndeshdetailsScreen extends StatelessWidget {
+class BookdetailsScreen extends StatelessWidget {
   final String? bookName;
-  const IndeshdetailsScreen({super.key, this.bookName});
+  const BookdetailsScreen({super.key, this.bookName});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,6 @@ class IndeshdetailsScreen extends StatelessWidget {
               padding: EdgeInsets.all(8.0),
               child: Column(
                 children: [
-                  // ignore: prefer_const_constructors
                   SizedBox(
                     height: 10,
                   ),

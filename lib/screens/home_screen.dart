@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_field, prefer_final_fields
 
 import 'package:flutter/material.dart';
-import 'package:profile_app/screens/Indeshdetails_screen.dart';
+import 'package:profile_app/screens/bookdetails_screen.dart';
 import 'package:profile_app/screens/join_screen.dart';
 import 'package:profile_app/screens/search_screen.dart';
 
@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: double.infinity,
                 height: 260,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(242, 99, 65, 194),
+                  color: Color.fromARGB(241, 15, 15, 15),
                   // backgroundBlendMode: BlendMode.color,
                   // border: Border.all(color: Colors.blue, width: 3),
                   borderRadius: BorderRadius.only(
@@ -107,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => IndeshdetailsScreen(
+                                builder: (context) => BookdetailsScreen(
                                       bookName:
                                           'The Silent Patient\nby  Alex Michaelides',
                                     )));
@@ -116,12 +116,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Image.asset(
                             'assets/silent.png',
-                            width: 82,
-                            height: 82,
+                            width: 84,
+                            height: 84,
                           ),
                           const SizedBox(height: 5),
                           const Text(
-                            'The Silent Patient',
+                            'The Silent\nPatient',
                             style: TextStyle(fontSize: 12),
                           ),
                         ],
@@ -139,12 +139,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Image.asset(
                             'assets/Rich_dad.png',
-                            width: 82,
-                            height: 82,
+                            width: 84,
+                            height: 84,
                           ),
                           const SizedBox(height: 5),
                           const Text(
-                            'Rich Dad Poor Dad',
+                            'Rich Dad\nPoor Dad',
                             style: TextStyle(fontSize: 12),
                           ),
                         ],
@@ -162,12 +162,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Image.asset(
                             'assets/hunting.png',
-                            width: 82,
-                            height: 82,
+                            width: 84,
+                            height: 84,
                           ),
                           const SizedBox(height: 5),
                           const Text(
-                            'Haunting Adeline ',
+                            'Haunting\nAdeline ',
                             style: TextStyle(fontSize: 12),
                           ),
                         ],
@@ -185,12 +185,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Image.asset(
                             'assets/mind-time.png',
-                            width: 82,
-                            height: 82,
+                            width: 84,
+                            height: 84,
                           ),
                           const SizedBox(height: 5),
                           const Text(
-                            'Mind Management',
+                            'Mind\nManagement',
                             style: TextStyle(fontSize: 12),
                           ),
                         ],
@@ -209,12 +209,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Image.asset(
                             'assets/five_seconds.png',
-                            width: 82,
-                            height: 82,
+                            width: 84,
+                            height: 84,
                           ),
                           const SizedBox(height: 5),
                           const Text(
-                            'The 5 Second Rule',
+                            'The 5 Second\nRule',
                             style: TextStyle(fontSize: 12),
                           ),
                         ],
@@ -233,12 +233,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           Image.asset(
                             'assets/cant.png',
-                            width: 82,
-                            height: 82,
+                            width: 84,
+                            height: 84,
                           ),
                           const SizedBox(height: 5),
                           const Text(
-                            "Can't Hurt Me",
+                            "Can't\nHurt Me",
                             style: TextStyle(fontSize: 12),
                           ),
                         ],
@@ -249,13 +249,16 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(
-              height: 5.0,
+              height: 8.0,
             ),
             const Padding(
               padding: EdgeInsets.only(left: 14.0),
               child: Text(
-                '// Best Authors',
-                style: TextStyle(fontSize: 18, fontStyle: FontStyle.italic),
+                ' Best Authors',
+                style: TextStyle(
+                    fontSize: 20,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.bold),
               ),
             ),
             const SizedBox(
@@ -281,7 +284,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => IndeshdetailsScreen()));
+                                builder: (context) => BookdetailsScreen()));
                       },
                       child: _buildProfessional(
                         'assets/pracas.jpg',
@@ -294,7 +297,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => IndeshdetailsScreen()));
+                                  builder: (context) => BookdetailsScreen()));
                         },
                         child: _buildProfessional(
                             'assets/chudaraj1.jpg', 'Chudaraj Poudel')),
@@ -304,7 +307,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => IndeshdetailsScreen()));
+                                  builder: (context) => BookdetailsScreen()));
                         },
                         child: _buildProfessional(
                             'assets/diwas.jpg', 'Diwas Poudel')),
@@ -314,7 +317,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => IndeshdetailsScreen()));
+                                  builder: (context) => BookdetailsScreen()));
                         },
                         child: _buildProfessional(
                             'assets/naman.jpg', 'Naman Kunwar')),
@@ -324,7 +327,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => IndeshdetailsScreen()));
+                                  builder: (context) => BookdetailsScreen()));
                         },
                         child: _buildProfessional(
                             'assets/nirajan1.png', 'Nirajan Dahal')),
@@ -334,7 +337,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => IndeshdetailsScreen()));
+                                  builder: (context) => BookdetailsScreen()));
                         },
                         child: _buildProfessional(
                             'assets/isha.jpg', 'Isha Sunam')),
@@ -344,7 +347,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => IndeshdetailsScreen()));
+                                  builder: (context) => BookdetailsScreen()));
                         },
                         child: _buildProfessional(
                             'assets/rimesh.jpg', 'Rimesh Bhattarai')),
@@ -354,7 +357,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => IndeshdetailsScreen()));
+                                  builder: (context) => BookdetailsScreen()));
                         },
                         child: _buildProfessional(
                             'assets/pramod.jpg', 'Pramod Mahato')),
@@ -364,7 +367,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => IndeshdetailsScreen()));
+                                  builder: (context) => BookdetailsScreen()));
                         },
                         child: _buildProfessional(
                             'assets/alisha.jpg', 'Alisha Ghimire')),
@@ -393,11 +396,11 @@ Widget _buildProfessional(String imagePath, String label) {
             backgroundImage: AssetImage(imagePath),
             // radius: 42,
             minRadius: 20,
-            maxRadius: 45,
+            maxRadius: 49,
           ),
         ),
         const SizedBox(
-          height: 10,
+          height: 5,
         ),
         Text(
           label,
