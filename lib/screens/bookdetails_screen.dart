@@ -1,62 +1,46 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
+import 'package:profile_app/helpers/apphelper.dart';
 
 class BookdetailsScreen extends StatelessWidget {
-  final String? bookName;
-  const BookdetailsScreen({super.key, this.bookName});
+  final int index;
+
+  const BookdetailsScreen({super.key, required this.index});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(left: 18.0, top: 90.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Image.asset('assets/silent.png'),
-            ),
-            Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Text(
-                    bookName ?? "",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    '',
-                    style: TextStyle(fontSize: 15),
-                  ),
-                  SizedBox(
-                    height: 1,
-                  ),
-                  Text(
-                    '#Fiction #Technological #Suspense',
-                    style: TextStyle(fontSize: 15),
-                    // ),
-                    // SizedBox(
-                    //   height: 5,
-                    // ),
-                    // Text(
-                    //   'Working hours: 10:00 AM - 5:30 PM (NPT)',
-                    //   style: TextStyle(fontSize: 10),
-                    // ),
-                    // SizedBox(
-                    //   height: 20,
-                  ),
-                ],
+      appBar: AppBar(
+        title: Text(AppHelpers.bookName[index]),
+      ),
+      body: InteractiveViewer(
+        panEnabled: true,
+        scaleEnabled: true,
+        minScale: 0.4,
+        maxScale: 6.0,
+        constrained: true,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.asset(AppHelpers.bookImage[index]),
+              const SizedBox(height: 16.0),
+              Text(
+                AppHelpers.bookName[index],
+                style: const TextStyle(
+                  fontSize: 24.0,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            )
-          ],
+              const SizedBox(height: 8.0),
+              Text(
+                AppHelpers.bookDescription[index],
+                style: const TextStyle(
+                  fontSize: 16.0,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

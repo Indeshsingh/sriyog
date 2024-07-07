@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:profile_app/screens/bookdetails_screen.dart';
+
 import 'package:profile_app/screens/join_screen.dart';
 import 'package:profile_app/screens/search_screen.dart';
 
@@ -101,15 +102,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     InkWell(
                       splashColor: Colors.blueAccent,
-                      onLongPress: () {},
-                      onDoubleTap: () {},
+                      //onLongPress: () {},
+                      //onDoubleTap: () {},
                       onTap: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => BookdetailsScreen(
-                                      bookName:
-                                          'The Silent Patient\nby  Alex Michaelides',
+                                      index: 0,
                                     )));
                       },
                       child: Column(
@@ -133,7 +133,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SearchScreen()));
+                                builder: (context) => BookdetailsScreen(
+                                      index: 0,
+                                    )));
                       },
                       child: Column(
                         children: [
@@ -284,11 +286,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => BookdetailsScreen()));
+                                builder: (context) => BookdetailsScreen(
+                                      index: 0,
+                                    )));
                       },
                       child: _buildProfessional(
                         'assets/pracas.jpg',
-                        'Pracas Upreti',
+                        'Pracas',
                       ),
                     ),
                     InkWell(
@@ -297,80 +301,93 @@ class _HomeScreenState extends State<HomeScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => BookdetailsScreen()));
+                                  builder: (context) => BookdetailsScreen(
+                                        index: 1,
+                                      )));
                         },
                         child: _buildProfessional(
-                            'assets/chudaraj1.jpg', 'Chudaraj Poudel')),
+                            'assets/chudaraj1.jpg', 'Chudaraj')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => BookdetailsScreen()));
+                                  builder: (context) => BookdetailsScreen(
+                                        index: 1,
+                                      )));
                         },
-                        child: _buildProfessional(
-                            'assets/diwas.jpg', 'Diwas Poudel')),
+                        child: _buildProfessional('assets/diwas.jpg', 'Diwas')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => BookdetailsScreen()));
+                                  builder: (context) => BookdetailsScreen(
+                                        index: 1,
+                                      )));
                         },
-                        child: _buildProfessional(
-                            'assets/naman.jpg', 'Naman Kunwar')),
+                        child: _buildProfessional('assets/naman.jpg', 'Naman')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => BookdetailsScreen()));
+                                  builder: (context) => BookdetailsScreen(
+                                        index: 1,
+                                      )));
                         },
                         child: _buildProfessional(
-                            'assets/nirajan1.png', 'Nirajan Dahal')),
+                            'assets/nirajan1.png', 'Nirajan')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => BookdetailsScreen()));
+                                  builder: (context) => BookdetailsScreen(
+                                        index: 1,
+                                      )));
                         },
-                        child: _buildProfessional(
-                            'assets/isha.jpg', 'Isha Sunam')),
+                        child: _buildProfessional('assets/isha.jpg', 'Isha')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => BookdetailsScreen()));
+                                  builder: (context) => BookdetailsScreen(
+                                        index: 1,
+                                      )));
                         },
-                        child: _buildProfessional(
-                            'assets/rimesh.jpg', 'Rimesh Bhattarai')),
+                        child:
+                            _buildProfessional('assets/rimesh.jpg', 'Rimesh')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => BookdetailsScreen()));
+                                  builder: (context) => BookdetailsScreen(
+                                        index: 1,
+                                      )));
                         },
-                        child: _buildProfessional(
-                            'assets/pramod.jpg', 'Pramod Mahato')),
+                        child:
+                            _buildProfessional('assets/pramod.jpg', 'Pramod')),
                     InkWell(
                         splashColor: Colors.blue,
                         onTap: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => BookdetailsScreen()));
+                                  builder: (context) => BookdetailsScreen(
+                                        index: 1,
+                                      )));
                         },
-                        child: _buildProfessional(
-                            'assets/alisha.jpg', 'Alisha Ghimire')),
+                        child:
+                            _buildProfessional('assets/alisha.jpg', 'Alisha')),
                   ],
                 ),
               ),
@@ -400,7 +417,7 @@ Widget _buildProfessional(String imagePath, String label) {
           ),
         ),
         const SizedBox(
-          height: 5,
+          height: 0.0,
         ),
         Text(
           label,
