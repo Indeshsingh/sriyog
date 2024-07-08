@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:profile_app/screens/authordetails_screen.dart';
 import 'package:profile_app/screens/bookdetails_screen.dart';
+import 'package:profile_app/screens/authordetails_screen.dart';
+import 'package:flutter_flip_card/flutter_flip_card.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,17 +32,13 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 17.0, right: 17.0),
-              child: Container(
-                width: double.infinity,
-                height: 260,
-                decoration: const BoxDecoration(
-                  color: Color.fromARGB(241, 15, 15, 15),
-                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
-                  image: DecorationImage(
-                    image: AssetImage('assets/bhagavad_gita1.png'),
-                    fit: BoxFit.cover,
-                  ),
-                ),
+              child: FlipCard(
+                frontWidget: _buildFlipCardFront(),
+                backWidget: _buildFlipCardBack(),
+                onTapFlipping: true,
+                axis: FlipAxis.vertical,
+                controller: FlipCardController(),
+                rotateSide: RotateSide.right,
               ),
             ),
             const SizedBox(height: 5),
@@ -133,6 +130,36 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildFlipCardFront() {
+    return Container(
+      width: double.infinity,
+      height: 260,
+      decoration: const BoxDecoration(
+        color: Color.fromARGB(218, 83, 14, 222),
+        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+        image: DecorationImage(
+          image: AssetImage('assets/bhagavad_gita1.png'),
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildFlipCardBack() {
+    return Container(
+      width: double.infinity,
+      height: 260,
+      decoration: const BoxDecoration(
+        color: Color.fromARGB(218, 222, 14, 14),
+        borderRadius: BorderRadius.all(Radius.circular(15.0)),
+        image: DecorationImage(
+          image: AssetImage('assets/bhagavad-gita2.png'),
+          fit: BoxFit.cover,
         ),
       ),
     );
