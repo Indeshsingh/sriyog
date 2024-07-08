@@ -32,7 +32,7 @@ class AuthordetailsScreen extends StatelessWidget {
                 alignment: Alignment.center,
                 child: Text(
                   AppHelpers.authorName[index],
-                  style: const TextStyle(),
+                  style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
             ],
