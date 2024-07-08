@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:profile_app/helpers/booklist_screen.dart';
+import 'package:profile_app/screens/authordetails_screen.dart';
 import 'package:profile_app/screens/bookdetails_screen.dart';
 import 'package:profile_app/screens/contact_screen.dart';
 import 'package:profile_app/screens/home_screen.dart';
@@ -23,7 +23,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
     const SearchScreen(),
     const JoinScreen(),
     const ContactScreen(),
-    BookdetailsScreen(index: 0),
+    const BookdetailsScreen(index: 0),
+    const AuthordetailsScreen(index: 0),
     // BookListScreen()
   ];
 

@@ -1,10 +1,6 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_field, prefer_final_fields
-
 import 'package:flutter/material.dart';
+import 'package:profile_app/screens/authordetails_screen.dart';
 import 'package:profile_app/screens/bookdetails_screen.dart';
-
-import 'package:profile_app/screens/join_screen.dart';
-import 'package:profile_app/screens/search_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(left: 17.0, right: 17.0, top: 10.0),
               child: Text(
                 'Book of the Day',
@@ -38,25 +34,17 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Container(
                 width: double.infinity,
                 height: 260,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color.fromARGB(241, 15, 15, 15),
-                  // backgroundBlendMode: BlendMode.color,
-                  // border: Border.all(color: Colors.blue, width: 3),
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(15.0),
-                      bottomRight: Radius.circular(15.0),
-                      topLeft: Radius.circular(15.0),
-                      topRight: Radius.circular(15.0)),
-                  image: const DecorationImage(
+                  borderRadius: BorderRadius.all(Radius.circular(15.0)),
+                  image: DecorationImage(
                     image: AssetImage('assets/bhagavad_gita1.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
               ),
             ),
-            const SizedBox(
-              height: 5,
-            ),
+            const SizedBox(height: 5),
             const Padding(
               padding: EdgeInsets.only(left: 16.0),
               child: Text(
@@ -67,16 +55,14 @@ class _HomeScreenState extends State<HomeScreen> {
             const Padding(
               padding: EdgeInsets.only(left: 16.0, top: 5.0),
               child: Text(
-                'Best Sellers ',
+                'Best Sellers',
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     fontStyle: FontStyle.normal),
               ),
             ),
-            const SizedBox(
-              height: 5,
-            ),
+            const SizedBox(height: 5),
             const Padding(
               padding: EdgeInsets.only(left: 16.0),
               child: Text(
@@ -84,188 +70,46 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(fontSize: 18, fontStyle: FontStyle.italic),
               ),
             ),
-            const SizedBox(
-              height: 10,
-            ),
+            const SizedBox(height: 10),
             Padding(
               padding: const EdgeInsets.only(left: 16.0),
               child: SingleChildScrollView(
-                // duration: Duration(seconds: 100),
-                // delay: Duration(seconds: 1),
-                // delayAfterScrollInput: Duration(seconds: 1),
-                // enableScrollInput: true,
-                // gap: 25,
-
                 scrollDirection: Axis.horizontal,
-                //physics: NeverScrollableScrollPhysics(),
                 child: Row(
                   children: [
-                    InkWell(
-                      splashColor: Colors.blueAccent,
-                      //onLongPress: () {},
-                      //onDoubleTap: () {},
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => BookdetailsScreen(
-                                      index: 0,
-                                    )));
-                      },
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            'assets/silent.png',
-                            width: 84,
-                            height: 84,
-                          ),
-                          const SizedBox(height: 5),
-                          const Text(
-                            'The Silent\nPatient',
-                            style: TextStyle(fontSize: 12),
-                          ),
-                        ],
-                      ),
-                    ),
+                    _buildBookItem(
+                        context, 'assets/silent.png', 'The Silent\nPatient', 0),
                     const SizedBox(width: 10),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => BookdetailsScreen(
-                                      index: 0,
-                                    )));
-                      },
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            'assets/Rich_dad.png',
-                            width: 84,
-                            height: 84,
-                          ),
-                          const SizedBox(height: 5),
-                          const Text(
-                            'Rich Dad\nPoor Dad',
-                            style: TextStyle(fontSize: 12),
-                          ),
-                        ],
-                      ),
-                    ),
+                    _buildBookItem(context, 'assets/Rich_dad.png',
+                        'Rich Dad\nPoor Dad', 1),
                     const SizedBox(width: 10),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SearchScreen()));
-                      },
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            'assets/hunting.png',
-                            width: 84,
-                            height: 84,
-                          ),
-                          const SizedBox(height: 5),
-                          const Text(
-                            'Haunting\nAdeline ',
-                            style: TextStyle(fontSize: 12),
-                          ),
-                        ],
-                      ),
-                    ),
+                    _buildBookItem(
+                        context, 'assets/hunting.png', 'Haunting\nAdeline', 2),
                     const SizedBox(width: 10),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SearchScreen()));
-                      },
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            'assets/mind-time.png',
-                            width: 84,
-                            height: 84,
-                          ),
-                          const SizedBox(height: 5),
-                          const Text(
-                            'Mind\nManagement',
-                            style: TextStyle(fontSize: 12),
-                          ),
-                        ],
-                      ),
-                    ),
+                    _buildBookItem(
+                        context, 'assets/mind-time.png', 'Mind\nManagement', 3),
                     const SizedBox(width: 10),
-                    InkWell(
-                      splashColor: Colors.blue,
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SearchScreen()));
-                      },
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            'assets/five_seconds.png',
-                            width: 84,
-                            height: 84,
-                          ),
-                          const SizedBox(height: 5),
-                          const Text(
-                            'The 5 Second\nRule',
-                            style: TextStyle(fontSize: 12),
-                          ),
-                        ],
-                      ),
-                    ),
+                    _buildBookItem(context, 'assets/five_seconds.png',
+                        'The 5 Second\nRule', 4),
                     const SizedBox(width: 10),
-                    InkWell(
-                      splashColor: Colors.blue,
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SearchScreen()));
-                      },
-                      child: Column(
-                        children: [
-                          Image.asset(
-                            'assets/cant.png',
-                            width: 84,
-                            height: 84,
-                          ),
-                          const SizedBox(height: 5),
-                          const Text(
-                            "Can't\nHurt Me",
-                            style: TextStyle(fontSize: 12),
-                          ),
-                        ],
-                      ),
-                    ),
+                    _buildBookItem(
+                        context, 'assets/cant.png', "Can't\nHurt Me", 5),
                   ],
                 ),
               ),
             ),
-            const SizedBox(
-              height: 8.0,
-            ),
+            const SizedBox(height: 8.0),
             const Padding(
               padding: EdgeInsets.only(left: 14.0),
               child: Text(
-                ' Best Authors',
+                'Best Authors',
                 style: TextStyle(
                     fontSize: 20,
                     fontStyle: FontStyle.normal,
                     fontWeight: FontWeight.bold),
               ),
             ),
-            const SizedBox(
-              height: 5.0,
-            ),
+            const SizedBox(height: 5.0),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: SingleChildScrollView(
@@ -273,121 +117,17 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    InkWell(
-                      // hoverColor: Colors.red,
-                      splashColor: Colors.blue,
-                      onDoubleTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => JoinScreen()));
-                      },
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => BookdetailsScreen(
-                                      index: 0,
-                                    )));
-                      },
-                      child: _buildProfessional(
-                        'assets/pracas.jpg',
-                        'Pracas',
-                      ),
-                    ),
-                    InkWell(
-                        splashColor: Colors.blue,
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => BookdetailsScreen(
-                                        index: 1,
-                                      )));
-                        },
-                        child: _buildProfessional(
-                            'assets/chudaraj1.jpg', 'Chudaraj')),
-                    InkWell(
-                        splashColor: Colors.blue,
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => BookdetailsScreen(
-                                        index: 1,
-                                      )));
-                        },
-                        child: _buildProfessional('assets/diwas.jpg', 'Diwas')),
-                    InkWell(
-                        splashColor: Colors.blue,
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => BookdetailsScreen(
-                                        index: 1,
-                                      )));
-                        },
-                        child: _buildProfessional('assets/naman.jpg', 'Naman')),
-                    InkWell(
-                        splashColor: Colors.blue,
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => BookdetailsScreen(
-                                        index: 1,
-                                      )));
-                        },
-                        child: _buildProfessional(
-                            'assets/nirajan1.png', 'Nirajan')),
-                    InkWell(
-                        splashColor: Colors.blue,
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => BookdetailsScreen(
-                                        index: 1,
-                                      )));
-                        },
-                        child: _buildProfessional('assets/isha.jpg', 'Isha')),
-                    InkWell(
-                        splashColor: Colors.blue,
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => BookdetailsScreen(
-                                        index: 1,
-                                      )));
-                        },
-                        child:
-                            _buildProfessional('assets/rimesh.jpg', 'Rimesh')),
-                    InkWell(
-                        splashColor: Colors.blue,
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => BookdetailsScreen(
-                                        index: 1,
-                                      )));
-                        },
-                        child:
-                            _buildProfessional('assets/pramod.jpg', 'Pramod')),
-                    InkWell(
-                        splashColor: Colors.blue,
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => BookdetailsScreen(
-                                        index: 1,
-                                      )));
-                        },
-                        child:
-                            _buildProfessional('assets/alisha.jpg', 'Alisha')),
+                    _buildAuthorItem(context, 'assets/pracas.jpg', 'Pracas', 0),
+                    _buildAuthorItem(
+                        context, 'assets/chudaraj1.jpg', 'Chudaraj', 1),
+                    _buildAuthorItem(context, 'assets/diwas.jpg', 'Diwas', 2),
+                    _buildAuthorItem(context, 'assets/naman.jpg', 'Naman', 3),
+                    _buildAuthorItem(
+                        context, 'assets/nirajan1.png', 'Nirajan', 4),
+                    _buildAuthorItem(context, 'assets/isha.jpg', 'Isha', 5),
+                    _buildAuthorItem(context, 'assets/rimesh.jpg', 'Rimesh', 6),
+                    _buildAuthorItem(context, 'assets/pramod.jpg', 'Pramod', 7),
+                    _buildAuthorItem(context, 'assets/alisha.jpg', 'Alisha', 8),
                   ],
                 ),
               ),
@@ -397,33 +137,72 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-}
 
-Widget _buildProfessional(String imagePath, String label) {
-  return Padding(
-    padding: const EdgeInsets.only(left: 2.0),
-    child: Column(
-      children: [
-        // SizedBox(
-        //   height: 5,
-        // ),
-        Padding(
-          padding: EdgeInsets.only(left: 9.0),
-          child: CircleAvatar(
-            backgroundImage: AssetImage(imagePath),
-            // radius: 42,
-            minRadius: 20,
-            maxRadius: 49,
+  Widget _buildBookItem(
+      BuildContext context, String imagePath, String title, int index) {
+    return InkWell(
+      splashColor: Colors.blueAccent,
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => BookdetailsScreen(index: index),
           ),
-        ),
-        const SizedBox(
-          height: 0.0,
-        ),
-        Text(
-          label,
-          style: const TextStyle(fontSize: 12),
-        ),
-      ],
-    ),
-  );
+        );
+      },
+      child: Column(
+        children: [
+          Image.asset(
+            imagePath,
+            width: 84,
+            height: 84,
+          ),
+          const SizedBox(height: 5),
+          Text(
+            title,
+            style: const TextStyle(fontSize: 12),
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildAuthorItem(
+      BuildContext context, String imagePath, String label, int index) {
+    return InkWell(
+      splashColor: Colors.blue,
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AuthordetailsScreen(index: index),
+          ),
+        );
+      },
+      child: _buildProfessional(imagePath, label),
+    );
+  }
+
+  Widget _buildProfessional(String imagePath, String label) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 2.0),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 9.0),
+            child: CircleAvatar(
+              backgroundImage: AssetImage(imagePath),
+              minRadius: 20,
+              maxRadius: 49,
+            ),
+          ),
+          Text(
+            label,
+            style: const TextStyle(fontSize: 12),
+          ),
+        ],
+      ),
+    );
+  }
 }
