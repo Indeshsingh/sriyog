@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 
 import 'package:profile_app/screens/authordetails_screen.dart';
 import 'package:profile_app/screens/bookdetails_screen.dart';
+import 'package:profile_app/screens/contact_screen.dart';
 import 'package:profile_app/screens/home_screen.dart';
+import 'package:profile_app/screens/join_screen.dart';
+import 'package:profile_app/screens/library_screen.dart';
+import 'package:profile_app/screens/search_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -17,10 +21,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
 
   final List<Widget> _pages = [
     const HomeScreen(),
+    const LibraryScreen(),
+    const SearchScreen(),
+    const JoinScreen(),
+    const ContactScreen(),
     const BookdetailsScreen(index: 0),
     const AuthordetailsScreen(index: 0),
-    Container(), // Placeholder for the third page
-    Container(), // Placeholder for the fourth page
   ];
 
   @override

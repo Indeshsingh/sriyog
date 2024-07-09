@@ -10,7 +10,7 @@ class JoinScreen extends StatefulWidget {
 }
 
 class _JoinScreenState extends State<JoinScreen> {
-  bool valueFirst = false; // Define the boolean variable
+  bool valueFirst = false;
   final TextEditingController _name = TextEditingController();
   String? _selectedProfession;
   String? _selectedCity;

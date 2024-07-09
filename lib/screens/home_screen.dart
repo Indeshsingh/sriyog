@@ -15,121 +15,127 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white60,
-      body: Padding(
-        padding: const EdgeInsets.only(left: 4.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Padding(
-              padding: EdgeInsets.only(left: 17.0, right: 17.0, top: 10.0),
-              child: Text(
-                'Book of the Day',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 17.0, right: 17.0),
-              child: FlipCard(
-                frontWidget: _buildFlipCardFront(),
-                backWidget: _buildFlipCardBack(),
-                onTapFlipping: true,
-                axis: FlipAxis.vertical,
-                controller: FlipCardController(),
-                rotateSide: RotateSide.right,
-              ),
-            ),
-            const SizedBox(height: 5),
-            const Padding(
-              padding: EdgeInsets.only(left: 16.0),
-              child: Text(
-                'Verified',
-                style: TextStyle(fontSize: 20, fontStyle: FontStyle.italic),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(left: 16.0, top: 5.0),
-              child: Text(
-                'Best Sellers',
-                style: TextStyle(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 4.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(left: 17.0, right: 17.0, top: 10.0),
+                child: Text(
+                  'Book of the Day',
+                  style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    fontStyle: FontStyle.normal),
-              ),
-            ),
-            const SizedBox(height: 5),
-            const Padding(
-              padding: EdgeInsets.only(left: 16.0),
-              child: Text(
-                '// Popular Now',
-                style: TextStyle(fontSize: 18, fontStyle: FontStyle.italic),
-              ),
-            ),
-            const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.only(left: 16.0),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    _buildBookItem(
-                        context, 'assets/silent.png', 'The Silent\nPatient', 0),
-                    const SizedBox(width: 10),
-                    _buildBookItem(context, 'assets/Rich_dad.png',
-                        'Rich Dad\nPoor Dad', 1),
-                    const SizedBox(width: 10),
-                    _buildBookItem(
-                        context, 'assets/hunting.png', 'Haunting\nAdeline', 2),
-                    const SizedBox(width: 10),
-                    _buildBookItem(
-                        context, 'assets/mind-time.png', 'Mind\nManagement', 3),
-                    const SizedBox(width: 10),
-                    _buildBookItem(context, 'assets/five_seconds.png',
-                        'The 5 Second\nRule', 4),
-                    const SizedBox(width: 10),
-                    _buildBookItem(
-                        context, 'assets/cant.png', "Can't\nHurt Me", 5),
-                  ],
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 8.0),
-            const Padding(
-              padding: EdgeInsets.only(left: 14.0),
-              child: Text(
-                'Best Authors',
-                style: TextStyle(
-                    fontSize: 20,
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.bold),
-              ),
-            ),
-            const SizedBox(height: 5.0),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    _buildAuthorItem(context, 'assets/pracas.jpg', 'Pracas', 0),
-                    _buildAuthorItem(
-                        context, 'assets/chudaraj1.jpg', 'Chudaraj', 1),
-                    _buildAuthorItem(context, 'assets/diwas.jpg', 'Diwas', 2),
-                    _buildAuthorItem(context, 'assets/naman.jpg', 'Naman', 3),
-                    _buildAuthorItem(
-                        context, 'assets/nirajan1.png', 'Nirajan', 4),
-                    _buildAuthorItem(context, 'assets/isha.jpg', 'Isha', 5),
-                    _buildAuthorItem(context, 'assets/rimesh.jpg', 'Rimesh', 6),
-                    _buildAuthorItem(context, 'assets/pramod.jpg', 'Pramod', 7),
-                    _buildAuthorItem(context, 'assets/alisha.jpg', 'Alisha', 8),
-                  ],
+              Padding(
+                padding: const EdgeInsets.only(left: 17.0, right: 17.0),
+                child: FlipCard(
+                  frontWidget: _buildFlipCardFront(),
+                  backWidget: _buildFlipCardBack(),
+                  onTapFlipping: true,
+                  axis: FlipAxis.vertical,
+                  controller: FlipCardController(),
+                  rotateSide: RotateSide.right,
                 ),
               ),
-            ),
-          ],
+              const SizedBox(height: 5),
+              const Padding(
+                padding: EdgeInsets.only(left: 16.0),
+                child: Text(
+                  'Verified',
+                  style: TextStyle(fontSize: 20, fontStyle: FontStyle.italic),
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.only(left: 16.0, top: 5.0),
+                child: Text(
+                  'Best Sellers',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.normal),
+                ),
+              ),
+              const SizedBox(height: 5),
+              const Padding(
+                padding: EdgeInsets.only(left: 16.0),
+                child: Text(
+                  '// Popular Now',
+                  style: TextStyle(fontSize: 18, fontStyle: FontStyle.italic),
+                ),
+              ),
+              const SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.only(left: 16.0),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      _buildBookItem(context, 'assets/silent.png',
+                          'The Silent\nPatient', 0),
+                      const SizedBox(width: 10),
+                      _buildBookItem(context, 'assets/Rich_dad.png',
+                          'Rich Dad\nPoor Dad', 1),
+                      const SizedBox(width: 10),
+                      _buildBookItem(context, 'assets/hunting.png',
+                          'Haunting\nAdeline', 2),
+                      const SizedBox(width: 10),
+                      _buildBookItem(context, 'assets/mind-time.png',
+                          'Mind\nManagement', 3),
+                      const SizedBox(width: 10),
+                      _buildBookItem(context, 'assets/five_seconds.png',
+                          'The 5 Second\nRule', 4),
+                      const SizedBox(width: 10),
+                      _buildBookItem(
+                          context, 'assets/cant.png', "Can't\nHurt Me", 5),
+                    ],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 8.0),
+              const Padding(
+                padding: EdgeInsets.only(left: 14.0),
+                child: Text(
+                  'Best Authors',
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              const SizedBox(height: 5.0),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      _buildAuthorItem(
+                          context, 'assets/pracas.jpg', 'Pracas', 0),
+                      _buildAuthorItem(
+                          context, 'assets/chudaraj1.jpg', 'Chudaraj', 1),
+                      _buildAuthorItem(context, 'assets/diwas.jpg', 'Diwas', 2),
+                      _buildAuthorItem(context, 'assets/naman.jpg', 'Naman', 3),
+                      _buildAuthorItem(
+                          context, 'assets/nirajan1.png', 'Nirajan', 4),
+                      _buildAuthorItem(context, 'assets/isha.jpg', 'Isha', 5),
+                      _buildAuthorItem(
+                          context, 'assets/rimesh.jpg', 'Rimesh', 6),
+                      _buildAuthorItem(
+                          context, 'assets/pramod.jpg', 'Pramod', 7),
+                      _buildAuthorItem(
+                          context, 'assets/alisha.jpg', 'Alisha', 8),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
