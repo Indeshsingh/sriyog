@@ -7,7 +7,6 @@ import 'package:profile_app/screens/contact_screen.dart';
 import 'package:profile_app/screens/home_screen.dart';
 import 'package:profile_app/screens/join_screen.dart';
 import 'package:profile_app/screens/library_screen.dart';
-import 'package:profile_app/screens/search_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -22,7 +21,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final List<Widget> _pages = [
     const HomeScreen(),
     const LibraryScreen(),
-    const SearchScreen(),
     const JoinScreen(),
     const ContactScreen(),
     const BookdetailsScreen(index: 0),
@@ -86,7 +84,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(Icons.room_service), label: 'Library'),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
           BottomNavigationBarItem(icon: Icon(Icons.join_full), label: 'Join'),
           BottomNavigationBarItem(
               icon: Icon(Icons.contact_phone), label: 'Contact'),
