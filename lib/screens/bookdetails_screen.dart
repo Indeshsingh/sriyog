@@ -1,46 +1,37 @@
 import 'package:flutter/material.dart';
-import 'package:profile_app/helpers/apphelper.dart';
 
 class BookdetailsScreen extends StatelessWidget {
-  final int index;
+  final Map<String, String> book;
 
-  const BookdetailsScreen({super.key, required this.index});
+  const BookdetailsScreen({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppHelpers.bookName[index]),
+        title: Text(book['text']!),
       ),
-      body: InteractiveViewer(
-        panEnabled: true,
-        scaleEnabled: true,
-        minScale: 0.4,
-        maxScale: 6.0,
-        constrained: true,
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Image.asset(AppHelpers.bookImage[index]),
-              const SizedBox(height: 16.0),
-              Text(
-                AppHelpers.bookName[index],
-                style: const TextStyle(
-                  fontSize: 24.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const SizedBox(height: 8.0),
-              Text(
-                AppHelpers.bookDescription[index],
-                style: const TextStyle(
-                  fontSize: 16.0,
-                ),
-              ),
-            ],
-          ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            Image.asset(
+              book['imagePath']!,
+              height: MediaQuery.of(context).size.height * 0.3,
+              width: MediaQuery.of(context).size.width * 0.6,
+            ),
+            const SizedBox(height: 20),
+            Text(
+              book['text']!,
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              "",
+              // You can add a detailed description from AppHelpers if needed
+              style: TextStyle(fontSize: 16),
+            ),
+          ],
         ),
       ),
     );

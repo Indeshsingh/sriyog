@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:profile_app/helpers/apphelper.dart';
 import 'package:profile_app/screens/bookdetails_screen.dart';
 import 'package:profile_app/screens/authordetails_screen.dart';
 import 'package:flutter_flip_card/flutter_flip_card.dart';
@@ -179,7 +180,13 @@ class _HomeScreenState extends State<HomeScreen> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => BookdetailsScreen(index: index),
+            builder: (context) => BookdetailsScreen(
+              book: {
+                'imagePath': AppHelpers.bookImage[index],
+                'text': AppHelpers.bookName[index],
+                'description': AppHelpers.bookDescription[index],
+              },
+            ),
           ),
         );
       },

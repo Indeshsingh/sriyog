@@ -1,8 +1,6 @@
 // bottom_nav_bar.dart
 import 'package:flutter/material.dart';
 
-import 'package:profile_app/screens/authordetails_screen.dart';
-import 'package:profile_app/screens/bookdetails_screen.dart';
 import 'package:profile_app/screens/contact_screen.dart';
 import 'package:profile_app/screens/home_screen.dart';
 import 'package:profile_app/screens/join_screen.dart';
@@ -23,8 +21,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
     const LibraryScreen(),
     const JoinScreen(),
     const ContactScreen(),
-    const BookdetailsScreen(index: 0),
-    const AuthordetailsScreen(index: 0),
+    // const BookdetailsScreen(index: 0),
+    // const AuthordetailsScreen(index: 0),
   ];
 
   @override

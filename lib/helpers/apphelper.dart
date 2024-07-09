@@ -1,11 +1,12 @@
 class AppHelpers {
   static const List<String> bookName = [
-    "The Silent Patient by Alex Michaelides",
+    "The Silent Patient by\nAlex Michaelides",
     "Rich Dad Poor Dad",
     "Hunting Adeline",
     "Mind Management",
     "The 5 Second Rule",
     "Can't Hurt Me",
+    "A programmer's\nGuide to the mind",
   ];
 
   static const List<String> bookImage = [
@@ -15,6 +16,7 @@ class AppHelpers {
     "assets/mind-time.png",
     "assets/five_seconds.png",
     "assets/cant.png",
+    "assets/books/A programmer's Guide to the Mind.png",
   ];
 
   static const List<String> bookDescription = [
@@ -23,6 +25,7 @@ class AppHelpers {
     "A gripping tale of suspense and danger.",
     "Techniques for managing your mind for success.",
     "A transformative approach to taking action.",
+    "An inspirational story of resilience and overcoming obstacles.",
     "An inspirational story of resilience and overcoming obstacles.",
   ];
 

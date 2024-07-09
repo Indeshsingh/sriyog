@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:profile_app/helpers/apphelper.dart';
+import 'package:profile_app/screens/bookdetails_screen.dart';
 
 class LibraryScreen extends StatefulWidget {
   const LibraryScreen({super.key});
@@ -9,51 +11,17 @@ class LibraryScreen extends StatefulWidget {
 
 class _LibraryScreenState extends State<LibraryScreen> {
   String searchText = '';
-  final List<Map<String, String>> books = [
-    {'imagePath': 'assets/silent.png', 'text': 'The Silent\nPatient'},
-    {
-      'imagePath': 'assets/mind-time.png',
-      'text': 'Mind Management\nNot Time Management'
-    },
-    {'imagePath': 'assets/offers.png', 'text': 'Hundrerd million\nOffers'},
-    {'imagePath': 'assets/five_seconds.png', 'text': 'The 5 Second\nRule'},
-    {'imagePath': 'assets/hunting.png', 'text': 'Haunting\nAdeline'},
-    {
-      'imagePath': "assets/books/A programmer's Guide to the Mind.png",
-      'text': "A programmer's\nGuide to the Mind"
-    },
-    {
-      'imagePath': 'assets/books/Child development.png',
-      'text': 'Child\nDevelopment'
-    },
-    {'imagePath': 'assets/books/Cosmic Healing.png', 'text': 'Cosmic\nHealing'},
-    {
-      'imagePath': 'assets/books/foregin_exchange and money markets.png',
-      'text': 'Foregin exchange\nand money markets'
-    },
-    {
-      'imagePath': 'assets/books/Fronted frameworks.png',
-      'text': 'Fronted\nframeworks'
-    },
-    {
-      'imagePath': 'assets/books/Money management skills.png',
-      'text': 'Money Management\nSkills'
-    },
-    {
-      'imagePath': 'assets/books/Speed math for kids.png',
-      'text': 'Speed Math\nfor kids'
-    },
-    {'imagePath': 'assets/best-stephen-king.png', 'text': 'Best\nStephen King'},
-    {'imagePath': 'assets/bhagavad_gita1.png', 'text': 'Bhagavad\nGita'},
-    // {'imagePath': 'assets/tubewell.png', 'text': 'Tubewell'},
-    // {'imagePath': 'assets/tubewell.png', 'text': 'Tubewell'},
-    // {'imagePath': 'assets/tubewell.png', 'text': 'Tubewell'},
-    // {'imagePath': 'assets/tubewell.png', 'text': 'Tubewell'},
-    // {'imagePath': 'assets/tubewell.png', 'text': 'Tubewell'},
-  ];
 
   @override
   Widget build(BuildContext context) {
+    List<Map<String, String>> books =
+        List.generate(AppHelpers.bookName.length, (index) {
+      return {
+        'imagePath': AppHelpers.bookImage[index],
+        'text': AppHelpers.bookName[index],
+      };
+    });
+
     List<Map<String, String>> filteredBooks = books.where((book) {
       return book['text']!.toLowerCase().contains(searchText.toLowerCase());
     }).toList();
@@ -86,8 +54,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 children: filteredBooks.map((book) {
-                  return BookItem(
-                      imagePath: book['imagePath']!, text: book['text']!);
+                  return BookItem(book: book);
                 }).toList(),
               ),
             ],
@@ -99,23 +66,44 @@ class _LibraryScreenState extends State<LibraryScreen> {
 }
 
 class BookItem extends StatelessWidget {
-  final String imagePath;
-  final String text;
+  final Map<String, String> book;
 
-  const BookItem({super.key, required this.imagePath, required this.text});
+  const BookItem({super.key, required this.book});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Image.asset(
-          imagePath,
-          height: MediaQuery.of(context).size.height * 0.15,
-          width: MediaQuery.of(context).size.width * 0.16,
-        ),
-        FittedBox(child: Text(text, style: const TextStyle(fontSize: 14))),
-      ],
+    return InkWell(
+      splashColor: Colors.blue,
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => BookdetailsScreen(book: book),
+          ),
+        );
+      },
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            book['imagePath']!,
+            height: MediaQuery.of(context).size.height * 0.15,
+            width: MediaQuery.of(context).size.width * 0.16,
+          ),
+          FittedBox(
+            child: Text(
+              book['text']!,
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 14),
+            ),
+          ),
+          // Text(
+          //   book['description']!,
+          //   textAlign: TextAlign.center,
+          //   style: const TextStyle(fontSize: 14),
+          // ),
+        ],
+      ),
     );
   }
 }
