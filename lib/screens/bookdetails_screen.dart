@@ -26,10 +26,9 @@ class BookdetailsScreen extends StatelessWidget {
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
-            const Text(
-              "",
-              // You can add a detailed description from AppHelpers if needed
-              style: TextStyle(fontSize: 16),
+            Text(
+              book["description"]!,
+              style: const TextStyle(fontSize: 16),
             ),
           ],
         ),

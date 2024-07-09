@@ -1,5 +1,5 @@
 class AppHelpers {
-  static const List<String> bookName = [
+  static List<String> bookName = [
     "The Silent Patient by\nAlex Michaelides",
     "Rich Dad Poor Dad",
     "Hunting Adeline",
@@ -9,7 +9,7 @@ class AppHelpers {
     "A programmer's\nGuide to the mind",
   ];
 
-  static const List<String> bookImage = [
+  static List<String> bookImage = [
     "assets/silent.png",
     "assets/Rich_dad.png",
     "assets/hunting.png",
@@ -19,14 +19,14 @@ class AppHelpers {
     "assets/books/A programmer's Guide to the Mind.png",
   ];
 
-  static const List<String> bookDescription = [
+  static List<String> bookDescription = [
     "A psychological thriller that will keep you on the edge of your seat.",
     "A guide to financial literacy and wealth-building.",
     "A gripping tale of suspense and danger.",
     "Techniques for managing your mind for success.",
     "A transformative approach to taking action.",
     "An inspirational story of resilience and overcoming obstacles.",
-    "An inspirational story of resilience and overcoming obstacles.",
+    "An inspirational story of resilience and overcoming .",
   ];
 
   static const List<String> authorName = [
