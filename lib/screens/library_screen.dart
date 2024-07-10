@@ -19,6 +19,8 @@ class _LibraryScreenState extends State<LibraryScreen> {
       return {
         'imagePath': AppHelpers.bookImage[index],
         'text': AppHelpers.bookName[index],
+        // 'description': AppHelpers.bookDescription[index],
+        // 'synopsis': AppHelpers.bookSynopsis[index],
       };
     });
 
@@ -97,11 +99,6 @@ class BookItem extends StatelessWidget {
               style: const TextStyle(fontSize: 14),
             ),
           ),
-          // Text(
-          //   book['description']!,
-          //   textAlign: TextAlign.center,
-          //   style: const TextStyle(fontSize: 14),
-          // ),
         ],
       ),
     );

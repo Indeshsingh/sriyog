@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:profile_app/helpers/apphelper.dart';
 
 class BookdetailsScreen extends StatelessWidget {
   final Map<String, String> book;
@@ -30,21 +31,17 @@ class BookdetailsScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 Text(
-                  book['text']!,
-                  style: const TextStyle(
-                      fontSize: 24, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 20),
-                Text(
-                  book["description"]!,
-                  style: const TextStyle(fontSize: 16),
+                  AppHelpers.bookDescription[
+                      AppHelpers.bookName.indexOf(book['text']!)],
+                  style: const TextStyle(fontSize: 14),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
                 Text(
-                  book["synopsis"]!,
-                  style: const TextStyle(fontSize: 16),
+                  AppHelpers
+                      .bookSynopsis[AppHelpers.bookName.indexOf(book['text']!)],
+                  style: const TextStyle(fontSize: 14),
                 ),
                 const SizedBox(
                   height: 10,

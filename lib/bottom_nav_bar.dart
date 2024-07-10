@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:profile_app/screens/contact_screen.dart';
 import 'package:profile_app/screens/home_screen.dart';
-import 'package:profile_app/screens/join_screen.dart';
+import 'package:profile_app/screens/submit_screen.dart';
 import 'package:profile_app/screens/library_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
