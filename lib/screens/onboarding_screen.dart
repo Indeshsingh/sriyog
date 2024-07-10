@@ -42,7 +42,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         ],
       ),
       bottomSheet: _currentPage == 2
-          ? TextButton(
+          ? ElevatedButton(
+              style: const ButtonStyle(
+                  backgroundColor: WidgetStatePropertyAll(Colors.black)),
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
@@ -51,7 +53,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                 );
               },
-              child: const Text('Get Started'),
+              child: const Text(
+                'Get Started',
+                style: TextStyle(color: Colors.white),
+              ),
             )
           : Container(
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -64,7 +69,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     onPressed: () {
                       _pageController.jumpToPage(2);
                     },
-                    child: const Text('Skip'),
+                    child: const Text(
+                      'Skip',
+                      style: TextStyle(color: Colors.black),
+                    ),
                   ),
                   Row(
                     children: List.generate(3, (index) => _buildDot(index)),
@@ -76,7 +84,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         curve: Curves.ease,
                       );
                     },
-                    child: const Text('Next'),
+                    child: const Text(
+                      'Next',
+                      style: TextStyle(color: Colors.black),
+                    ),
                   ),
                 ],
               ),

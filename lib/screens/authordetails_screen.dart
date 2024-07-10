@@ -14,26 +14,28 @@ class AuthordetailsScreen extends StatelessWidget {
         title: Text(AppHelpers.authorName[index]),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 95.0, right: 95.0),
+        padding: const EdgeInsets.only(left: 92.0, right: 92.0),
         child: SizedBox(
           height: MediaQuery.of(context).size.height * 0.5,
           width: MediaQuery.of(context).size.width * 0.5,
           child: Column(
-            // crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               ClipRRect(
-                  borderRadius: BorderRadius.circular(200),
-                  child: Image.asset(AppHelpers.authorImage[index])),
-              // const SizedBox(
-              //   height: 1.0,
-              // ),
-              Align(
-                alignment: Alignment.center,
-                child: Text(
-                  AppHelpers.authorName[index],
-                  style: const TextStyle(fontWeight: FontWeight.bold),
+                borderRadius: BorderRadius.circular(200),
+                child: Image.asset(
+                  AppHelpers.authorImage[index],
+                  height: MediaQuery.of(context).size.height * 0.3,
+                  width: MediaQuery.of(context).size.height * 0.3,
+                  fit: BoxFit.cover, // Adjust the fit as needed
                 ),
+              ),
+              const SizedBox(height: 1.0),
+              Text(
+                textAlign: TextAlign.justify,
+                AppHelpers.authorName[index],
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
               ),
             ],
           ),
