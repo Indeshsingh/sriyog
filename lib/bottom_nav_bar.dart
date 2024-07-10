@@ -82,7 +82,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(Icons.room_service), label: 'Library'),
-          BottomNavigationBarItem(icon: Icon(Icons.join_full), label: 'Join'),
+          BottomNavigationBarItem(icon: Icon(Icons.join_full), label: 'Submit'),
           BottomNavigationBarItem(
               icon: Icon(Icons.contact_phone), label: 'Contact'),
         ],

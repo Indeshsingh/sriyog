@@ -49,7 +49,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
               const SizedBox(height: 20),
               GridView.count(
                 crossAxisCount: 2,
-                crossAxisSpacing: 20.0,
+                crossAxisSpacing: 18.0,
                 mainAxisSpacing: 10.0,
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
