@@ -1,6 +1,6 @@
 class AppHelpers {
   static List<String> bookName = [
-    "The Silent Patient by\nAlex Michaelides",
+    "The Silent Patient",
     "Rich Dad Poor Dad",
     "Hunting Adeline",
     "Mind Management",
@@ -20,13 +20,13 @@ class AppHelpers {
   ];
 
   static List<String> bookDescription = [
-    "A psychological thriller that will keep you on the edge of your seat.",
-    "A guide to financial literacy and wealth-building.",
-    "A gripping tale of suspense and danger.",
-    "Techniques for managing your mind for success.",
-    "A transformative approach to taking action.",
-    "An inspirational story of resilience and overcoming obstacles.",
-    "programming, offering practical insights into how understanding the mind can enhance coding skills and team collaboration in software development.",
+    "by Alex Michaelides(Author)",
+    "by Robert T. Kiyosaki(Author)",
+    "by H.D. Carlton(Author)",
+    "by David Kadavy(Author)",
+    "by Mel Robbins(Author)",
+    "by David Goggins(Author)",
+    "by Dr. Don D. Campbel(Author)",
   ];
   static List<String> bookSynopsis = [
     "The Silent Patient by Alex Michaelides is a psychological thriller about Alicia Berenson, a renowned painter who becomes mute after being accused of murdering her husband, Gabriel. Her silence intrigues Theo Faber, a forensic psychologist, who is determined to get her to speak and uncover the truth. As Theo investigates,..",

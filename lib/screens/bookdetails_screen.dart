@@ -2,8 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:profile_app/helpers/apphelper.dart';
-import 'package:footer/footer.dart';
-import 'package:footer/footer_view.dart';
 
 class BookdetailsScreen extends StatelessWidget {
   final Map<String, String> book;
@@ -16,17 +14,17 @@ class BookdetailsScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(book['text']!),
       ),
-      body: FooterView(
+      body: Column(
         children: [
-          InteractiveViewer(
-            panEnabled: true,
-            scaleEnabled: true,
-            minScale: 0.5,
-            maxScale: 6.0,
-            panAxis: PanAxis.free,
-            constrained: true,
-            child: SingleChildScrollView(
-              child: Padding(
+          Expanded(
+            child: InteractiveViewer(
+              panEnabled: true,
+              scaleEnabled: true,
+              minScale: 0.5,
+              maxScale: 6.0,
+              panAxis: PanAxis.free,
+              constrained: true,
+              child: SingleChildScrollView(
                 padding: const EdgeInsets.all(16.0),
                 child: Column(
                   children: [
@@ -39,22 +37,19 @@ class BookdetailsScreen extends StatelessWidget {
                     Text(
                       AppHelpers.bookDescription[
                           AppHelpers.bookName.indexOf(book['text']!)],
-                      style: const TextStyle(fontSize: 18),
+                      style: const TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.bold),
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
+                    const SizedBox(height: 20),
                     Text(
                       AppHelpers.bookSynopsis[
                           AppHelpers.bookName.indexOf(book['text']!)],
                       style: const TextStyle(fontSize: 18),
                     ),
-                    const SizedBox(
-                      height: 65,
-                    ),
+                    const SizedBox(height: 65),
                     ElevatedButton(
                       style: const ButtonStyle(
-                        backgroundColor: WidgetStatePropertyAll(Colors.black),
+                        backgroundColor: MaterialStatePropertyAll(Colors.black),
                       ),
                       onPressed: () {},
                       child: const Text(
@@ -67,24 +62,28 @@ class BookdetailsScreen extends StatelessWidget {
               ),
             ),
           ),
-        ],
-        footer: Footer(
-          child: const Column(
-            children: [
-              Divider(
-                color: Colors.black,
-                thickness: 0.5,
-              ),
-              Text(
-                '© 2024, All Rights Reserved.',
-                style: TextStyle(
+          Container(
+            color: const Color.fromARGB(66, 96, 84, 84),
+            child: const Column(
+              children: [
+                Divider(
                   color: Colors.black,
-                  fontSize: 15,
+                  thickness: 0.5,
                 ),
-              ),
-            ],
+                Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Text(
+                    '© 2024, All Rights Reserved.',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
