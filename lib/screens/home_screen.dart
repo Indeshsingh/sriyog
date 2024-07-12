@@ -223,11 +223,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         );
       },
-      child: _buildProfessional(imagePath, label),
+      child: _buildAuthor(imagePath, label),
     );
   }
 
-  Widget _buildProfessional(String imagePath, String label) {
+  Widget _buildAuthor(String imagePath, String label) {
     return Padding(
       padding: const EdgeInsets.only(left: 2.0),
       child: Column(
