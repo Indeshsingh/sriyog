@@ -28,18 +28,18 @@ class AppHelpers {
     "by David Goggins(Author)",
     "by Dr. Don D. Campbel(Author)",
   ];
-  // static List<String> bookPublication = [
-  //   "Publication Date: April 1, 1997",
-  //   "Publication Date: April 1, 1997",
-  //   "Publication Date: April 1, 1997",
-  //   "Publication Date: April 1, 1997",
-  //   "Publication Date: April 1, 1997",
-  //   "Publication Date: April 1, 1997",
-  //   "Publication Date: April 1, 1997",
-  // ];
+  static List<String> bookPublication = [
+    "Publication Date: April 1, 1997",
+    "Publication Date: February 5, 2019",
+    "Publication Date: August 13, 2021",
+    "Publication Date: 27, 2020",
+    "Publication Date: February 28, 2017",
+    "Publication Date: December 4, 2018",
+    "Publication Date: 2016",
+  ];
 
   static List<String> bookSynopsis = [
-    "The Silent Patient by Alex Michaelides is a psychological thriller about Alicia Berenson, a renowned painter who becomes mute after being accused of murdering her husband, Gabriel. Her silence intrigues Theo Faber, a forensic psychologist, who is determined to get her to speak and uncover the truth. As Theo investigates,..",
+    "The Silent Patient by Alex Michaelides is a psychological thriller about Alicia Berenson, a renowned painter who becomes mute after being accused of murdering her husband, Gabriel. Her silence intrigues Theo Faber, a forensic psychologist,..",
     "Rich Dad Poor Dad by Robert T. Kiyosaki is a personal finance book that contrasts the financial philosophies of the author's two dads—his biological father (Poor Dad) and his best friend's father (Rich Dad). Poor Dad is highly educated but financially struggling,.. ",
     "Haunting Adeline by H.D. Carlton is a dark romance and suspense novel about Adeline, a successful author, who moves into her grandmother's,.. ",
     "Mind Management, Not Time Management by David Kadavy focuses on optimizing productivity by managing mental energy and creative flow rather than strictly adhering to time management techniques,.. ",

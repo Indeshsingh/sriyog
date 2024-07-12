@@ -27,7 +27,7 @@ class AuthordetailsScreen extends StatelessWidget {
                   AppHelpers.authorImage[index],
                   height: MediaQuery.of(context).size.height * 0.3,
                   width: MediaQuery.of(context).size.height * 0.3,
-                  fit: BoxFit.cover, // Adjust the fit as needed
+                  fit: BoxFit.cover,
                 ),
               ),
               const SizedBox(height: 1.0),

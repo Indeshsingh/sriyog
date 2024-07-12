@@ -19,8 +19,6 @@ class _LibraryScreenState extends State<LibraryScreen> {
       return {
         'imagePath': AppHelpers.bookImage[index],
         'text': AppHelpers.bookName[index],
-        // 'description': AppHelpers.bookDescription[index],
-        // 'synopsis': AppHelpers.bookSynopsis[index],
       };
     });
 
@@ -56,7 +54,8 @@ class _LibraryScreenState extends State<LibraryScreen> {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 children: filteredBooks.map((book) {
-                  return BookItem(book: book);
+                  int index = books.indexOf(book); // Get the index of the book
+                  return BookItem(book: book, index: index);
                 }).toList(),
               ),
             ],
@@ -69,8 +68,9 @@ class _LibraryScreenState extends State<LibraryScreen> {
 
 class BookItem extends StatelessWidget {
   final Map<String, String> book;
+  final int index; // Add index parameter
 
-  const BookItem({super.key, required this.book});
+  const BookItem({super.key, required this.book, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +80,16 @@ class BookItem extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => BookdetailsScreen(book: book),
+            builder: (context) => BookdetailsScreen(
+              index: index,
+              book: {
+                'imagePath': AppHelpers.bookImage[index],
+                'text': AppHelpers.bookName[index],
+                'description': AppHelpers.bookDescription[index],
+                'publication': AppHelpers.bookPublication[index],
+                'synopsis': AppHelpers.bookSynopsis[index],
+              },
+            ),
           ),
         );
       },

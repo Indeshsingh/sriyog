@@ -5,8 +5,9 @@ import 'package:profile_app/helpers/apphelper.dart';
 
 class BookdetailsScreen extends StatelessWidget {
   final Map<String, String> book;
+  final int index;
 
-  const BookdetailsScreen({super.key, required this.book});
+  const BookdetailsScreen({super.key, required this.book, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -24,47 +25,47 @@ class BookdetailsScreen extends StatelessWidget {
               maxScale: 6.0,
               panAxis: PanAxis.free,
               constrained: true,
-              child: SingleChildScrollView(
+              child: Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Column(
-                  children: [
-                    Image.asset(
-                      book['imagePath']!,
-                      height: MediaQuery.of(context).size.height * 0.3,
-                      width: MediaQuery.of(context).size.width * 0.6,
-                    ),
-                    const SizedBox(height: 20),
-                    Text(
-                      AppHelpers.bookDescription[
-                          AppHelpers.bookName.indexOf(book['text']!)],
-                      style: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.bold),
-                    ),
-                    // const SizedBox(
-                    //   height: 20,
-                    // ),
-                    // Text(
-                    //   AppHelpers.bookPublication[
-                    //       AppHelpers.bookPublication.indexOf(book['text']!)],
-                    // ),
-                    const SizedBox(height: 20),
-                    Text(
-                      AppHelpers.bookSynopsis[
-                          AppHelpers.bookName.indexOf(book['text']!)],
-                      style: const TextStyle(fontSize: 18),
-                    ),
-                    const SizedBox(height: 65),
-                    ElevatedButton(
-                      style: const ButtonStyle(
-                        backgroundColor: WidgetStatePropertyAll(Colors.black),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Image.asset(
+                        book['imagePath']!,
+                        height: MediaQuery.of(context).size.height * 0.3,
+                        width: MediaQuery.of(context).size.width * 0.6,
                       ),
-                      onPressed: () {},
-                      child: const Text(
-                        "Read Now",
-                        style: TextStyle(color: Colors.white),
+                      const SizedBox(height: 20),
+                      Text(
+                        AppHelpers.bookDescription[index],
+                        style: const TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                    ),
-                  ],
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        AppHelpers.bookPublication[index],
+                      ),
+                      const SizedBox(height: 20),
+                      Text(
+                        AppHelpers.bookSynopsis[index],
+                        style: const TextStyle(fontSize: 18),
+                      ),
+                      const SizedBox(height: 65),
+                      ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              WidgetStateProperty.all<Color>(Colors.black),
+                        ),
+                        onPressed: () {},
+                        child: const Text(
+                          "Read Now",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

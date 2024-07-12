@@ -181,11 +181,12 @@ class _HomeScreenState extends State<HomeScreen> {
           context,
           MaterialPageRoute(
             builder: (context) => BookdetailsScreen(
+              index: index,
               book: {
                 'imagePath': AppHelpers.bookImage[index],
                 'text': AppHelpers.bookName[index],
                 'description': AppHelpers.bookDescription[index],
-                // 'publication': AppHelpers.bookPublication[index],
+                'publication': AppHelpers.bookPublication[index],
                 'synopsis': AppHelpers.bookSynopsis[index],
               },
             ),
