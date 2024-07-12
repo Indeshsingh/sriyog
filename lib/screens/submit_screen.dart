@@ -12,6 +12,7 @@ class JoinScreen extends StatefulWidget {
 class _JoinScreenState extends State<JoinScreen> {
   bool valueFirst = false;
   final TextEditingController _name = TextEditingController();
+  // ignore: unused_field
   String? _selectedProfession;
   String? _selectedCity;
 
@@ -100,40 +101,30 @@ class _JoinScreenState extends State<JoinScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 2,
-                ),
-                Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: DropdownButtonFormField<String>(
-                    decoration: InputDecoration(
-                      labelText: 'Profession *',
-                      border: OutlineInputBorder(),
-                    ),
-                    value: _selectedProfession,
-                    items: [
-                      'Electrician',
-                      'Carpenter',
-                      'Priest',
-                      'Painter',
-                      'Contractor',
-                      'Tubewell',
-                      'Outlet',
-                      'Aluminium',
-                      'Interior Decorator',
-                    ]
-                        .map((profession) => DropdownMenuItem<String>(
-                              value: profession,
-                              child: Text(profession),
-                            ))
-                        .toList(),
-                    onChanged: (value) {
-                      setState(() {
-                        _selectedProfession = value;
-                      });
-                    },
-                  ),
-                ),
+                // const SizedBox(
+                //   height: 2,
+                // ),
+                // Padding(
+                //   padding: EdgeInsets.all(8.0),
+                //   child: DropdownButtonFormField<String>(
+                //     decoration: InputDecoration(
+                //       labelText: 'Profession *',
+                //       border: OutlineInputBorder(),
+                //     ),
+                //     // value: _selectedProfession,
+                //     // items: []
+                //     //     .map((profession) => DropdownMenuItem<String>(
+                //     //           value: profession,
+                //     //           child: Text(profession),
+                //     //         ))
+                //     //     .toList(),
+                //     // onChanged: (value) {
+                //     //   setState(() {
+                //     //     _selectedProfession = value;
+                //       });
+                //     },
+                //   ),
+                // ),
                 const SizedBox(
                   height: 2,
                 ),

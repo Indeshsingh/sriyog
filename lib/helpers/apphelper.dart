@@ -28,6 +28,16 @@ class AppHelpers {
     "by David Goggins(Author)",
     "by Dr. Don D. Campbel(Author)",
   ];
+  // static List<String> bookPublication = [
+  //   "Publication Date: April 1, 1997",
+  //   "Publication Date: April 1, 1997",
+  //   "Publication Date: April 1, 1997",
+  //   "Publication Date: April 1, 1997",
+  //   "Publication Date: April 1, 1997",
+  //   "Publication Date: April 1, 1997",
+  //   "Publication Date: April 1, 1997",
+  // ];
+
   static List<String> bookSynopsis = [
     "The Silent Patient by Alex Michaelides is a psychological thriller about Alicia Berenson, a renowned painter who becomes mute after being accused of murdering her husband, Gabriel. Her silence intrigues Theo Faber, a forensic psychologist, who is determined to get her to speak and uncover the truth. As Theo investigates,..",
     "Rich Dad Poor Dad by Robert T. Kiyosaki is a personal finance book that contrasts the financial philosophies of the author's two dads—his biological father (Poor Dad) and his best friend's father (Rich Dad). Poor Dad is highly educated but financially struggling,.. ",

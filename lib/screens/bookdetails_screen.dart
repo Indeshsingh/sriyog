@@ -40,6 +40,13 @@ class BookdetailsScreen extends StatelessWidget {
                       style: const TextStyle(
                           fontSize: 18, fontWeight: FontWeight.bold),
                     ),
+                    // const SizedBox(
+                    //   height: 20,
+                    // ),
+                    // Text(
+                    //   AppHelpers.bookPublication[
+                    //       AppHelpers.bookPublication.indexOf(book['text']!)],
+                    // ),
                     const SizedBox(height: 20),
                     Text(
                       AppHelpers.bookSynopsis[
@@ -49,7 +56,7 @@ class BookdetailsScreen extends StatelessWidget {
                     const SizedBox(height: 65),
                     ElevatedButton(
                       style: const ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(Colors.black),
+                        backgroundColor: WidgetStatePropertyAll(Colors.black),
                       ),
                       onPressed: () {},
                       child: const Text(

@@ -185,6 +185,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 'imagePath': AppHelpers.bookImage[index],
                 'text': AppHelpers.bookName[index],
                 'description': AppHelpers.bookDescription[index],
+                // 'publication': AppHelpers.bookPublication[index],
                 'synopsis': AppHelpers.bookSynopsis[index],
               },
             ),

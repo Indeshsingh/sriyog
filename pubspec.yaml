@@ -39,6 +39,7 @@ dependencies:
   flutter_flip_card: ^0.0.6
   responsive_builder:
   footer: ^0.0.4
+  google_maps_flutter: ^2.7.0
   
 
 dev_dependencies:
