@@ -32,7 +32,7 @@ class AppHelpers {
     "Publication Date: April 1, 1997",
     "Publication Date: February 5, 2019",
     "Publication Date: August 13, 2021",
-    "Publication Date: 27, 2020",
+    "Publication Date: October 27, 2020",
     "Publication Date: February 28, 2017",
     "Publication Date: December 4, 2018",
     "Publication Date: 2016",
