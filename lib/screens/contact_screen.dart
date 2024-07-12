@@ -108,7 +108,7 @@ class _ContactScreenState extends State<ContactScreen> {
                         style: TextStyle(
                           fontSize: 16.0,
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
