@@ -42,7 +42,7 @@ class BookdetailsScreen extends StatelessWidget {
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(
-                        height: 20,
+                        height: 0,
                       ),
                       Text(
                         AppHelpers.bookPublication[index],
