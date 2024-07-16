@@ -49,10 +49,10 @@ class AppHelpers {
   static List<String> bookStar = [
     "***",
     "***",
+    "****",
     "***",
     "***",
-    "***",
-    "***",
+    "****",
     "***",
   ];
 
@@ -64,6 +64,24 @@ class AppHelpers {
     "The 5 Second Rule by Mel Robbins is a self-help book that presents a simple technique to overcome hesitation and take action. The rule is straightforward: when faced with a decision or a moment of hesitation, count down from five and take action immediately. This technique interrupts negative thought patterns and activates the prefrontal cortex, encouraging decisive action and avoiding procrastination.Robbins explores how this rule can be applied to various aspects of life, from boosting productivity and achieving goals to improving relationships and managing stress. Through personal anecdotes and scientific research, she illustrates how this rule can transform habits and mindset, leading to positive change and personal empowerment.",
     "Can't Hurt Me by David Goggins is a memoir that chronicles Goggins' journey from a troubled and abused childhood to becoming a Navy SEAL and one of the world's top endurance athletes. The book details his relentless pursuit of self-improvement and mental toughness, overcoming physical and psychological challenges through extreme discipline and resilience.Goggins shares his philosophy on achieving greatness by embracing discomfort, pushing past perceived limits, and mastering the mind. Through gritty personal stories and practical advice, he inspires readers to confront their fears, cultivate mental toughness, and take control of their lives. Can't Hurt Me is a powerful narrative of perseverance and transformation, challenging readers to push beyond their comfort zones to achieve extraordinary results.",
     "A Programmer's Guide to the Mind by Don Lincoln explores the intricacies of human cognition through the lens of computer programming, drawing parallels between the brain and computational systems. It provides programmers with insights into how the brain processes information, stores memories, makes decisions, and manages emotions, using analogies with algorithms, data structures, and software design principles. The book aims to deepen understanding of both the biological and computational aspects of the mind, offering practical knowledge that programmers can apply to enhance their approach to software development and interface design.",
+  ];
+  static List<String> bookClap = [
+    "Clap : ",
+    "Clap : ",
+    "Clap : ",
+    "Clap : ",
+    "Clap : ",
+    "Clap : ",
+    "Clap : ",
+  ];
+  static List<String> bookClapcount = [
+    "375",
+    "375",
+    "375",
+    "375",
+    "375",
+    "375",
+    "375",
   ];
 
   static const List<String> authorName = [

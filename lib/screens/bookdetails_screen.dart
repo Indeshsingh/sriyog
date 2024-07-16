@@ -89,26 +89,51 @@ class _BookdetailsScreenState extends State<BookdetailsScreen> {
                     const SizedBox(
                       height: 5,
                     ),
-                    Text(
-                      AppHelpers.bookRating[widget.index],
-                      style: const TextStyle(fontSize: 16),
-                    ),
-                    Text(
-                      AppHelpers.bookStar[widget.index],
-                      textAlign: TextAlign.right,
-                      style: const TextStyle(fontSize: 25),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          AppHelpers.bookRating[widget.index],
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                        Text(
+                          AppHelpers.bookStar[widget.index],
+                          textAlign: TextAlign.right,
+                          style: const TextStyle(fontSize: 25),
+                        ),
+                      ],
                     ),
                     const SizedBox(height: 5),
                     DoubleTappableInteractiveViewer(
                       child: Text(
                         _isExpanded
                             ? AppHelpers.bookSynopsis[widget.index]
-                            : '${AppHelpers.bookSynopsis[widget.index].substring(0, 200)}...', // Display first 200 characters only when not expanded
+                            : '${AppHelpers.bookSynopsis[widget.index].substring(0, 200)}...',
                         style: const TextStyle(fontSize: 18),
                       ),
                     ),
                     const SizedBox(
                       height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(
+                          AppHelpers.bookClap[widget.index],
+                          style: const TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          AppHelpers.bookClapcount[widget.index],
+                          style: const TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -138,7 +163,7 @@ class _BookdetailsScreenState extends State<BookdetailsScreen> {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 20),
                     ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black,
