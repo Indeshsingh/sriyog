@@ -24,13 +24,13 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               const Padding(
                 padding: EdgeInsets.only(left: 17.0, right: 17.0, top: 10.0),
-                child: Text(
-                  'Book of the Day',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
+                // child: Text(
+                //   'Book of the Day',
+                //   style: TextStyle(
+                //     fontSize: 20,
+                //     fontWeight: FontWeight.bold,
+                //   ),
+                // ),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 17.0, right: 17.0),
@@ -145,7 +145,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildFlipCardFront() {
     return Container(
       width: double.infinity,
-      height: 260,
+      height: 285,
       decoration: const BoxDecoration(
         color: Color.fromARGB(218, 83, 14, 222),
         borderRadius: BorderRadius.all(Radius.circular(15.0)),
@@ -160,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildFlipCardBack() {
     return Container(
       width: double.infinity,
-      height: 260,
+      height: 285,
       decoration: const BoxDecoration(
         color: Color.fromARGB(218, 222, 14, 14),
         borderRadius: BorderRadius.all(Radius.circular(15.0)),
