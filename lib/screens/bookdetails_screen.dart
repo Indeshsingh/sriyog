@@ -49,7 +49,17 @@ class _BookdetailsScreenState extends State<BookdetailsScreen> {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      AppHelpers.bookPublication[widget.index],
+                      AppHelpers.bookISBN[widget.index],
+                      style: const TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      AppHelpers.bookRating[widget.index],
+                      style: const TextStyle(fontSize: 16),
                     ),
                     const SizedBox(height: 20),
                     DoubleTappableInteractiveViewer(

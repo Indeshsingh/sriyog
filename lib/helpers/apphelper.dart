@@ -28,14 +28,23 @@ class AppHelpers {
     "by David Goggins(Author)",
     "by Dr. Don D. Campbel(Author)",
   ];
-  static List<String> bookPublication = [
-    "Publication Date: April 1, 1997",
-    "Publication Date: February 5, 2019",
-    "Publication Date: August 13, 2021",
-    "Publication Date: October 27, 2020",
-    "Publication Date: February 28, 2017",
-    "Publication Date: December 4, 2018",
-    "Publication Date: 2016",
+  static List<String> bookISBN = [
+    "ISBN-13 : 978-1250301697",
+    "ISBN-13 : 978-1612680194",
+    "ISBN-13 : 978-1957635002",
+    "ISBN-13 : 978-0996349921",
+    "ISBN-13 : 978-1682612385",
+    "ISBN-13 : 978-1544512280",
+    "ISBN-13 : 978-1483400013",
+  ];
+  static List<String> bookRating = [
+    "Rating : ****",
+    "Rating : ****",
+    "Rating : ****",
+    "Rating : ****",
+    "Rating : ****",
+    "Rating : ****",
+    "Rating : ****",
   ];
 
   static List<String> bookSynopsis = [
