@@ -38,13 +38,22 @@ class AppHelpers {
     "ISBN-13 : 978-1483400013",
   ];
   static List<String> bookRating = [
-    "Rating : ****",
-    "Rating : ****",
-    "Rating : ****",
-    "Rating : ****",
-    "Rating : ****",
-    "Rating : ****",
-    "Rating : ****",
+    "Rating : ",
+    "Rating : ",
+    "Rating : ",
+    "Rating : ",
+    "Rating : ",
+    "Rating : ",
+    "Rating : ",
+  ];
+  static List<String> bookStar = [
+    "***",
+    "***",
+    "***",
+    "***",
+    "***",
+    "***",
+    "***",
   ];
 
   static List<String> bookSynopsis = [

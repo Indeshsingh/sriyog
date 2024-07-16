@@ -88,6 +88,7 @@ class BookItem extends StatelessWidget {
                 'description': AppHelpers.bookDescription[index],
                 'ISBN': AppHelpers.bookISBN[index],
                 'Rating': AppHelpers.bookRating[index],
+                'star': AppHelpers.bookStar[index],
                 'synopsis': AppHelpers.bookSynopsis[index],
               },
             ),

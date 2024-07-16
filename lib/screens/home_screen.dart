@@ -188,6 +188,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 'description': AppHelpers.bookDescription[index],
                 'ISBN': AppHelpers.bookISBN[index],
                 'rating': AppHelpers.bookRating[index],
+                'star': AppHelpers.bookStar[index],
                 'synopsis': AppHelpers.bookSynopsis[index],
               },
             ),
