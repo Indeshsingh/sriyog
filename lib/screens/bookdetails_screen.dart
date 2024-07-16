@@ -2,8 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:profile_app/helpers/apphelper.dart';
-import 'package:profile_app/screens/home_screen.dart';
-import 'package:profile_app/screens/library_screen.dart';
 
 class BookdetailsScreen extends StatefulWidget {
   final Map<String, String> book;
@@ -156,48 +154,43 @@ class _BookdetailsScreenState extends State<BookdetailsScreen> {
               ),
             ),
           ),
-          const Divider(
-            color: Colors.black,
-            thickness: 0.5,
-          ),
-          const Padding(
-            padding: EdgeInsets.all(8.0),
-            child: Text(
-              '© 2024, All Rights Reserved.',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 15,
-              ),
-            ),
-          ),
+          // const Divider(
+          //   color: Colors.black,
+          //   thickness: 0.5,
+          // ),
+          // const Padding(
+          //   padding: EdgeInsets.all(8.0),
+          //   child: Text(
+          //     '© 2024, All Rights Reserved.',
+          //     style: TextStyle(
+          //       color: Colors.black,
+          //       fontSize: 15,
+          //     ),
+          //   ),
+          // ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: const Color.fromARGB(255, 218, 215, 215),
+        child: const Icon(Icons.bookmark),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: const Color.fromARGB(255, 206, 194, 194),
         unselectedItemColor: Colors.grey,
         selectedItemColor: Colors.black,
         type: BottomNavigationBarType.fixed,
-        currentIndex: 0, // You can set the index according to your needs
+        currentIndex: 0,
         onTap: (int index) {
-          // Handle navigation here
           switch (index) {
             case 0:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const LibraryScreen()),
-              );
               break;
             case 1:
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const LibraryScreen()),
-              );
               break;
             case 2:
-              // Navigate to SubmitScreen or any other screen
               break;
             case 3:
-              // Navigate to ContactScreen or any other screen
               break;
           }
         },
