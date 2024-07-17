@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:profile_app/helpers/apphelper.dart';
-import 'package:share_plus/share_plus.dart';
 
 class BookDetailsScreen extends StatefulWidget {
   final Map<String, String> book;
@@ -15,8 +14,28 @@ class BookDetailsScreen extends StatefulWidget {
   _BookDetailsScreenState createState() => _BookDetailsScreenState();
 }
 
-class _BookDetailsScreenState extends State<BookDetailsScreen> {
+class _BookDetailsScreenState extends State<BookDetailsScreen>
+    with SingleTickerProviderStateMixin {
   bool _isExpanded = false;
+  int _clapCount = 0;
+  late AnimationController _animationController;
+  late Animation<double> _scaleAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _animationController =
+        AnimationController(vsync: this, duration: Duration(milliseconds: 300));
+    _scaleAnimation = Tween<double>(begin: 1.0, end: 1.5).animate(
+      CurvedAnimation(parent: _animationController, curve: Curves.easeInOut),
+    );
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
 
   void _toggleExpanded() {
     setState(() {
@@ -24,12 +43,11 @@ class _BookDetailsScreenState extends State<BookDetailsScreen> {
     });
   }
 
-  void shareContent() async {
-    String bookName = AppHelpers.bookName[widget.index];
-    String bookDescription = AppHelpers.bookDescription[widget.index];
-    String shareContent = 'Check out this book: $bookName\n$bookDescription';
-
-    await Share.share(shareContent);
+  void _handleClap() {
+    setState(() {
+      _clapCount++;
+    });
+    _animationController.forward(from: 0.0);
   }
 
   @override
@@ -125,15 +143,16 @@ class _BookDetailsScreenState extends State<BookDetailsScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text(
-                          AppHelpers.bookClap[widget.index],
-                          style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
+                        ClapAnimation(
+                          animation: _scaleAnimation,
+                          onPressed: _handleClap,
+                        ),
+                        const SizedBox(width: 12),
+                        const SizedBox(
+                          height: 12,
                         ),
                         Text(
-                          AppHelpers.bookClapcount[widget.index],
+                          '$_clapCount',
                           style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
@@ -146,7 +165,6 @@ class _BookDetailsScreenState extends State<BookDetailsScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         GestureDetector(
-                          onTap: shareContent,
                           child: Image.asset(
                             'assets/share.png',
                             width: 30,
@@ -263,6 +281,52 @@ class _DoubleTappableInteractiveViewerState
         minScale: _minScale,
         maxScale: _maxScale,
         child: widget.child,
+      ),
+    );
+  }
+}
+
+class ClapAnimation extends StatefulWidget {
+  final Animation<double> animation;
+  final VoidCallback onPressed;
+
+  const ClapAnimation({
+    Key? key,
+    required this.animation,
+    required this.onPressed,
+  }) : super(key: key);
+
+  @override
+  _ClapAnimationState createState() => _ClapAnimationState();
+}
+
+class _ClapAnimationState extends State<ClapAnimation> {
+  bool _isClapping = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _isClapping = true;
+        });
+        widget.onPressed();
+        widget.animation.addStatusListener((status) {
+          if (status == AnimationStatus.completed) {
+            setState(() {
+              _isClapping = false;
+            });
+          }
+        });
+      },
+      child: ScaleTransition(
+        scale: widget.animation,
+        child: Image.asset(
+          _isClapping ? 'assets/clap.png' : 'assets/clap.png',
+          width: 35.0,
+          height: 35.0,
+          color: _isClapping ? Colors.blue : Colors.grey,
+        ),
       ),
     );
   }

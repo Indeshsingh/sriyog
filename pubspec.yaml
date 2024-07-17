@@ -40,7 +40,6 @@ dependencies:
   responsive_builder:
   footer: ^0.0.4
   google_maps_flutter: ^2.7.0
-  share_plus: ^9.0.0
   
 
 dev_dependencies:
