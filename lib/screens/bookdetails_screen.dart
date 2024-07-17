@@ -1,3 +1,5 @@
+// ignore_for_file: use_super_parameters, library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 import 'package:profile_app/helpers/apphelper.dart';
 import 'package:share_plus/share_plus.dart';
@@ -25,8 +27,7 @@ class _BookDetailsScreenState extends State<BookDetailsScreen> {
   void shareContent() async {
     String bookName = AppHelpers.bookName[widget.index];
     String bookDescription = AppHelpers.bookDescription[widget.index];
-    String shareContent =
-        'Check out this book: $bookName\n$bookDescription\n\nFind out more here: https://example.com';
+    String shareContent = 'Check out this book: $bookName\n$bookDescription';
 
     await Share.share(shareContent);
   }
@@ -98,6 +99,7 @@ class _BookDetailsScreenState extends State<BookDetailsScreen> {
                     const SizedBox(height: 5),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           AppHelpers.bookRating[widget.index],
@@ -105,11 +107,11 @@ class _BookDetailsScreenState extends State<BookDetailsScreen> {
                         ),
                         Text(
                           AppHelpers.bookStar[widget.index],
-                          style: const TextStyle(fontSize: 28),
+                          style: const TextStyle(fontSize: 29),
                         ),
                       ],
                     ),
-                    const SizedBox(height: 5),
+                    const SizedBox(height: 2),
                     DoubleTappableInteractiveViewer(
                       child: Text(
                         _isExpanded
@@ -121,6 +123,7 @@ class _BookDetailsScreenState extends State<BookDetailsScreen> {
                     const SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
                           AppHelpers.bookClap[widget.index],
