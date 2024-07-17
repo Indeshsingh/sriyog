@@ -75,13 +75,13 @@ class AppHelpers {
     "Clap : ",
   ];
   static List<String> bookClapcount = [
+    "275",
     "375",
+    "270",
+    "350",
+    "255",
     "375",
-    "375",
-    "375",
-    "375",
-    "375",
-    "375",
+    "265",
   ];
 
   static const List<String> authorName = [

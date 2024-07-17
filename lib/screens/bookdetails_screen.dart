@@ -41,7 +41,7 @@ class _BookdetailsScreenState extends State<BookdetailsScreen> {
               ),
             ),
             Text(
-              ' Bookz |',
+              ' Bookiz |',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 //fontSize: 20,
@@ -100,7 +100,7 @@ class _BookdetailsScreenState extends State<BookdetailsScreen> {
                         Text(
                           AppHelpers.bookStar[widget.index],
                           textAlign: TextAlign.right,
-                          style: const TextStyle(fontSize: 25),
+                          style: const TextStyle(fontSize: 28),
                         ),
                       ],
                     ),

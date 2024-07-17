@@ -44,7 +44,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
               ),
             ),
             Text(
-              ' Bookz |',
+              ' Bookiz |',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 //fontSize: 20,
