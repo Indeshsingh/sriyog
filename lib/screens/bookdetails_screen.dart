@@ -1,26 +1,34 @@
-// ignore_for_file: prefer_final_fields, use_super_parameters, library_private_types_in_public_api
-
 import 'package:flutter/material.dart';
 import 'package:profile_app/helpers/apphelper.dart';
+import 'package:share_plus/share_plus.dart';
 
-class BookdetailsScreen extends StatefulWidget {
+class BookDetailsScreen extends StatefulWidget {
   final Map<String, String> book;
   final int index;
 
-  const BookdetailsScreen({Key? key, required this.book, required this.index})
+  const BookDetailsScreen({Key? key, required this.book, required this.index})
       : super(key: key);
 
   @override
-  _BookdetailsScreenState createState() => _BookdetailsScreenState();
+  _BookDetailsScreenState createState() => _BookDetailsScreenState();
 }
 
-class _BookdetailsScreenState extends State<BookdetailsScreen> {
+class _BookDetailsScreenState extends State<BookDetailsScreen> {
   bool _isExpanded = false;
 
   void _toggleExpanded() {
     setState(() {
       _isExpanded = !_isExpanded;
     });
+  }
+
+  void shareContent() async {
+    String bookName = AppHelpers.bookName[widget.index];
+    String bookDescription = AppHelpers.bookDescription[widget.index];
+    String shareContent =
+        'Check out this book: $bookName\n$bookDescription\n\nFind out more here: https://example.com';
+
+    await Share.share(shareContent);
   }
 
   @override
@@ -44,13 +52,12 @@ class _BookdetailsScreenState extends State<BookdetailsScreen> {
               ' Bookiz |',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                //fontSize: 20,
               ),
             ),
             Text(
               ' Explore Now',
               style: TextStyle(fontSize: 16),
-            )
+            ),
           ],
         ),
         actions: [
@@ -77,7 +84,9 @@ class _BookdetailsScreenState extends State<BookdetailsScreen> {
                     Text(
                       AppHelpers.bookDescription[widget.index],
                       style: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.bold),
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                     const SizedBox(height: 5),
                     Text(
@@ -86,11 +95,8 @@ class _BookdetailsScreenState extends State<BookdetailsScreen> {
                         fontSize: 16,
                       ),
                     ),
-                    const SizedBox(
-                      height: 5,
-                    ),
+                    const SizedBox(height: 5),
                     Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
@@ -99,7 +105,6 @@ class _BookdetailsScreenState extends State<BookdetailsScreen> {
                         ),
                         Text(
                           AppHelpers.bookStar[widget.index],
-                          textAlign: TextAlign.right,
                           style: const TextStyle(fontSize: 28),
                         ),
                       ],
@@ -113,35 +118,37 @@ class _BookdetailsScreenState extends State<BookdetailsScreen> {
                         style: const TextStyle(fontSize: 18),
                       ),
                     ),
-                    const SizedBox(
-                      height: 20,
-                    ),
+                    const SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
                           AppHelpers.bookClap[widget.index],
                           style: const TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                         Text(
                           AppHelpers.bookClapcount[widget.index],
                           style: const TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold),
-                        )
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ],
                     ),
-                    const SizedBox(
-                      height: 10,
-                    ),
+                    const SizedBox(height: 10),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          'assets/share.png',
-                          width: 30,
-                          height: 30,
+                        GestureDetector(
+                          onTap: shareContent,
+                          child: Image.asset(
+                            'assets/share.png',
+                            width: 30,
+                            height: 30,
+                          ),
                         ),
                         const SizedBox(width: 20),
                         Image.asset(
@@ -179,20 +186,6 @@ class _BookdetailsScreenState extends State<BookdetailsScreen> {
               ),
             ),
           ),
-          // const Divider(
-          //   color: Colors.black,
-          //   thickness: 0.5,
-          // ),
-          // const Padding(
-          //   padding: EdgeInsets.all(8.0),
-          //   child: Text(
-          //     '© 2024, All Rights Reserved.',
-          //     style: TextStyle(
-          //       color: Colors.black,
-          //       fontSize: 15,
-          //     ),
-          //   ),
-          // ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
@@ -245,10 +238,10 @@ class DoubleTappableInteractiveViewer extends StatefulWidget {
 
 class _DoubleTappableInteractiveViewerState
     extends State<DoubleTappableInteractiveViewer> {
-  TransformationController _transformationController =
+  final TransformationController _transformationController =
       TransformationController();
-  double _minScale = 1.0;
-  double _maxScale = 3.0;
+  final double _minScale = 1.0;
+  final double _maxScale = 3.0;
 
   void _handleDoubleTap() {
     final double currentScale =

@@ -97,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 8.0),
+              const SizedBox(height: 15.0),
               const Padding(
                 padding: EdgeInsets.only(left: 14.0),
                 child: Text(
@@ -180,7 +180,7 @@ class _HomeScreenState extends State<HomeScreen> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => BookdetailsScreen(
+            builder: (context) => BookDetailsScreen(
               index: index,
               book: {
                 'imagePath': AppHelpers.bookImage[index],

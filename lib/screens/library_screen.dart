@@ -80,7 +80,7 @@ class BookItem extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => BookdetailsScreen(
+            builder: (context) => BookDetailsScreen(
               index: index,
               book: {
                 'imagePath': AppHelpers.bookImage[index],
