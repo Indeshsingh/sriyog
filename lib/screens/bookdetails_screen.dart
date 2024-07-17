@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:profile_app/helpers/apphelper.dart';
+import 'package:profile_app/screens/home_screen.dart';
 
 class BookDetailsScreen extends StatefulWidget {
   final Map<String, String> book;
@@ -224,6 +225,8 @@ class _BookDetailsScreenState extends State<BookDetailsScreen>
         onTap: (int index) {
           switch (index) {
             case 0:
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const HomeScreen()));
               break;
             case 1:
               break;
@@ -325,7 +328,7 @@ class _ClapAnimationState extends State<ClapAnimation> {
           _isClapping ? 'assets/clap.png' : 'assets/clap.png',
           width: 35.0,
           height: 35.0,
-          color: _isClapping ? Colors.blue : Colors.grey,
+          color: _isClapping ? Colors.blue : Colors.yellow,
         ),
       ),
     );
