@@ -19,9 +19,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final List<Widget> _pages = [
     const HomeScreen(),
     const LibraryScreen(),
-    const JoinScreen(),
+    const SubmitScreen(),
     const ContactScreen(),
-    // const BookdetailsScreen(index: 0),
+
     // const AuthordetailsScreen(index: 0),
   ];
 
@@ -82,7 +82,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(Icons.room_service), label: 'Library'),
-          BottomNavigationBarItem(icon: Icon(Icons.join_full), label: 'Submit'),
+          BottomNavigationBarItem(icon: Icon(Icons.join_full), label: 'Join'),
           BottomNavigationBarItem(
               icon: Icon(Icons.contact_phone), label: 'Contact'),
         ],

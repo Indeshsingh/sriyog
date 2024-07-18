@@ -2,7 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:profile_app/helpers/apphelper.dart';
+import 'package:profile_app/screens/contact_screen.dart';
 import 'package:profile_app/screens/home_screen.dart';
+import 'package:profile_app/screens/library_screen.dart';
+import 'package:profile_app/screens/submit_screen.dart';
 
 class BookDetailsScreen extends StatefulWidget {
   final Map<String, String> book;
@@ -227,12 +230,25 @@ class _BookDetailsScreenState extends State<BookDetailsScreen>
             case 0:
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const HomeScreen()));
+
               break;
             case 1:
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const LibraryScreen()));
               break;
             case 2:
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SubmitScreen()));
               break;
             case 3:
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ContactScreen()));
               break;
           }
         },
@@ -240,7 +256,7 @@ class _BookDetailsScreenState extends State<BookDetailsScreen>
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(Icons.room_service), label: 'Library'),
-          BottomNavigationBarItem(icon: Icon(Icons.join_full), label: 'Submit'),
+          BottomNavigationBarItem(icon: Icon(Icons.join_full), label: 'Join'),
           BottomNavigationBarItem(
               icon: Icon(Icons.contact_phone), label: 'Contact'),
         ],

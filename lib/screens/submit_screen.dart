@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class JoinScreen extends StatefulWidget {
-  const JoinScreen({super.key});
+class SubmitScreen extends StatefulWidget {
+  const SubmitScreen({super.key});
 
   @override
-  State<JoinScreen> createState() => _JoinScreenState();
+  State<SubmitScreen> createState() => _SubmitScreenState();
 }
 
-class _JoinScreenState extends State<JoinScreen> {
+class _SubmitScreenState extends State<SubmitScreen> {
   bool valueFirst = false;
   final TextEditingController _name = TextEditingController();
   // ignore: unused_field
