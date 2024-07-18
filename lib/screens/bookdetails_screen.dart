@@ -1,11 +1,10 @@
-// ignore_for_file: use_super_parameters, library_private_types_in_public_api
-
 import 'package:flutter/material.dart';
 import 'package:profile_app/helpers/apphelper.dart';
 import 'package:profile_app/screens/contact_screen.dart';
 import 'package:profile_app/screens/home_screen.dart';
 import 'package:profile_app/screens/library_screen.dart';
 import 'package:profile_app/screens/submit_screen.dart';
+import 'package:share_plus/share_plus.dart';
 
 class BookDetailsScreen extends StatefulWidget {
   final Map<String, String> book;
@@ -52,6 +51,16 @@ class _BookDetailsScreenState extends State<BookDetailsScreen>
       _clapCount++;
     });
     _animationController.forward(from: 0.0);
+  }
+
+  void _shareText() {
+    Share.share('Welcome to the Bookiz', subject: 'Book recommendation');
+  }
+
+  void _shareImage() async {
+    // Replace with the path of the image you want to share
+    final imagePath = 'assets/book_image_to_share.png';
+    Share.shareFiles([imagePath], text: 'Check out this amazing book!');
   }
 
   @override
@@ -169,6 +178,7 @@ class _BookDetailsScreenState extends State<BookDetailsScreen>
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         GestureDetector(
+                          onTap: _shareText,
                           child: Image.asset(
                             'assets/share.png',
                             width: 30,
@@ -176,10 +186,13 @@ class _BookDetailsScreenState extends State<BookDetailsScreen>
                           ),
                         ),
                         const SizedBox(width: 20),
-                        Image.asset(
-                          'assets/facebook.png',
-                          width: 30,
-                          height: 30,
+                        GestureDetector(
+                          onTap: _shareImage,
+                          child: Image.asset(
+                            'assets/facebook.png',
+                            width: 30,
+                            height: 30,
+                          ),
                         ),
                         const SizedBox(width: 20),
                         Image.asset(
@@ -202,7 +215,7 @@ class _BookDetailsScreenState extends State<BookDetailsScreen>
                       ),
                       onPressed: _toggleExpanded,
                       child: Text(
-                        _isExpanded ? "Show Less" : "Read Now",
+                        _isExpanded ? "Show Less" : "Book",
                         style: const TextStyle(color: Colors.white),
                       ),
                     ),

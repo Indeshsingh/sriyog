@@ -26,7 +26,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         children: [
           _buildPage(
             imagePath: 'assets/best-stephen-king.png',
-            title: 'Welcome to Bookz',
+            title: 'Welcome to Bookiz',
             description: 'Discover your next favorite book!',
           ),
           _buildPage(
